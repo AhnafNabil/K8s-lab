@@ -76,6 +76,7 @@ kubectl get deployments
 ```
 
 The expected output:
+
 ![alt text](image-2.png)
 
 Use the following command to list the Pods:
@@ -85,6 +86,7 @@ kubectl get pods
 ```
 
 The expected output:
+
 ![alt text](image-3.png)
 
 
@@ -97,4 +99,5 @@ kubectl delete deployment nginx-deployment
 ```
 
 The expected output:
+
 ![alt text](image-3.png)
