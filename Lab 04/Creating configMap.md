@@ -67,7 +67,7 @@ kubectl get cm
 
 Expected result:
 
-![alt text](image.png)
+![alt text](./images/image.png)
 
 To see the details of this configMap use the following command:
 
@@ -77,4 +77,4 @@ kubectl describe configmap db-config
 
 Expected result:
 
-![alt text](image-1.png)
+![alt text](./images/image-1.png)
