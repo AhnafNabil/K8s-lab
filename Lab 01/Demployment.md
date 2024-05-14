@@ -1,4 +1,4 @@
-# Understanding Kubernetes Deployment Object
+# Creating Kubernetes Deployment Object
 
 A Kubernetes deployment manages a set of identical pods, ensuring they run and scale as needed. Under the hood, it uses a ReplicaSet to maintain the desired number of replicas of a pod template. So, while a ReplicaSet ensures a specified number of pod replicas are running, a deployment manages updates to that set, making it easier to handle changes and rollbacks in your application.
 
@@ -64,7 +64,7 @@ Create a Deployment named nginx-deployment that uses the image nginx. Set three 
     ```
 
     The expected output:
-    
+
     ![alt text](./images/image-1.png)
 
 You have successfully created the deployment!
