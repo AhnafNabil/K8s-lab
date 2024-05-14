@@ -54,7 +54,7 @@ Here's the expected output:
 - We can again scale down the deployment if we want. Here is a command to scale down the deployment to four replicas.
 
     ```
-    kubectl scale deployment nginx-deployment --replicas=7
+    kubectl scale deployment nginx-deployment --replicas=4
     ```
 
     Now, if we check the pods, we will see that the number of pods in this deployment is four.
