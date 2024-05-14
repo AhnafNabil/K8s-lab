@@ -64,6 +64,7 @@ Create a Deployment named nginx-deployment that uses the image nginx. Set three 
     ```
 
     The expected output:
+    
     ![alt text](./images/image-1.png)
 
 You have successfully created the deployment!
