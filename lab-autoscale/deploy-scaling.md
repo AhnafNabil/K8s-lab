@@ -13,7 +13,7 @@ Scalability refers to a system's ability to handle increasing load. In Kubernete
 
 The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment, replica set, or stateful set based on observed CPU utilization, memory utilization, or custom metrics. It continuously adjusts the number of replicas to maintain a target utilization level specified in the HPA configuration.
 
-![Horizontal Pod Autoscaler Diagram](./images/scale.png)
+![Horizontal Pod Autoscaler Diagram](./images/hpa-overview.png)
 
 ## Steps:
 
