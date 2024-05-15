@@ -1,26 +1,31 @@
 # Autoscaling a Deployment
-In this lab, we will attempt two tasks:
 
-1. Create a deployment named 'nginx' that utilizes the latest nginx image with some initial replicas.
+This guide walks through the process of autoscaling a deployment in Kubernetes. It covers two main tasks:
 
-2. Establish a Horizontal Pod Autoscaler for the deployment, aiming for an average CPU utilization of 65% and an average memory utilization of 1Gi. Set the minimum number of replicas to 3 and the maximum number of replicas to 10.
+1. Creating a deployment named 'nginx' using the latest nginx image with initial replicas.
+2. Establishing a Horizontal Pod Autoscaler (HPA) for the deployment, aiming for specific resource utilization metrics and setting minimum and maximum replica counts.
 
-**Before going to the implementation we will try to understand what is Scalibilty in kubernetes.**
+## Understanding Scalability in Kubernetes
 
-**Scalability** is the ability of a system to handle increasing load.
-Scaling workloads in Kubernetes refers to the ability to adjust the number of instances (replicas) of a workload dynamically based on demand or predefined metrics.
+Scalability refers to a system's ability to handle increasing load. In Kubernetes, scaling workloads involves dynamically adjusting the number of instances (replicas) of a workload based on demand or predefined metrics.
 
-**Horizontal Pod Autoscaler (HPA):** The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment, replica set, or stateful set based on observed CPU utilization or custom metrics. It continuously adjusts the number of replicas to maintain a target utilization level specified in the HPA configuration.
+### Horizontal Pod Autoscaler (HPA)
 
-![alt text](./images/scale.png)
+The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment, replica set, or stateful set based on observed CPU utilization, memory utilization, or custom metrics. It continuously adjusts the number of replicas to maintain a target utilization level specified in the HPA configuration.
 
-## Create a NGINX deployment
+![Horizontal Pod Autoscaler Diagram](./images/scale.png)
+
+## Steps:
+
+### 1. Create a NGINX Deployment
+
+Create a YAML manifest file for the deployment named `nginx-deployment.yaml`:
 
 ```bash
 vim nginx-deployment.yaml
 ```
 
-```YAML
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -40,49 +45,47 @@ spec:
         image: nginx
 ```
 
+Apply the deployment using the following command:
+
 ```bash
 kubectl apply -f nginx-deployment.yaml
 ```
 
-![alt text](./images/deploy.png)
+### 2. Create Horizontal Pod Autoscalers (HPA)
 
-## Create Horizontal Pod Autoscalers
-
-We can create an HPA for an existing Deployment by using the `autoscale deployment` command that creates an HPA for the nginx Deployment, with a minimum of 3 replicas and a maximum of 10 replicas, and a target
-```bash
-$ kubectl autoscale deployment nginx --cpu-percent=80 --min=3 --max=10
-```
-
-## Rendering Horizontal Pod Autoscaler Details
-
-The event record of an HPA can offer further understanding of the scaling operations.
+You can create an HPA for an existing Deployment using the `kubectl autoscale` command. For example:
 
 ```bash
-$ kubectl describe hpa nginx
+kubectl autoscale deployment nginx --cpu-percent=80 --min=3 --max=10
 ```
 
-## List all the Horizontal Pod Autoscalers:
+### 3. View HPA Details
+
+To view details about the Horizontal Pod Autoscaler, use the following command:
 
 ```bash
-$ kubectl get hpa
+kubectl describe hpa nginx
 ```
-Listing all the HPA objects transparently describes their current state.
 
-![alt text](./images/gethpa2.png)
-
-If the Pod template of the Deployment does not define CPU resource requirements or if the CPU metrics cannot be retrieved from the metrics server, the left value of the column “TARGETS” says `<unknown>`. We can solve this by defining CPU resource requirements to the Pod template
-
-**1. Delete the nginx deployment**
+You can also list all the Horizontal Pod Autoscalers:
 
 ```bash
-$ kubectl delete deployment nginx
+kubectl get hpa
 ```
 
-**2. Update the nginx pod definition file**
+![alt text](./images/gethpa.png)
+
+### 4. Define Resource Requirements
+
+If the Pod template of the Deployment does not define resource requirements or if the metrics cannot be retrieved, the HPA might show `<unknown>` values. To solve this, define CPU and memory resource requirements in the pod definition.
+
+1. Delete the existing nginx deployment:
 
 ```bash
-vim nginx-deployment.yaml
+kubectl delete deployment nginx
 ```
+
+2. Update the nginx pod definition file `nginx-deployment.yaml` to include resource requirements:
 
 ```YAML
 apiVersion: apps/v1
@@ -111,12 +114,13 @@ spec:
             cpu: "100m"     # Limit CPU to 100 millicores (0.1 cores)
 ```
 
+Apply the updated deployment:
+
 ```bash
 kubectl apply -f nginx-deployment.yaml
 ```
 
-3. Now create an HPA object using YAML manifest file.
-The YAML manifest representation:
+3. Define an HPA object in a declarative way using a YAML manifest file `nginx-hpa.yaml`:
 
 ```YAML
 apiVersion: autoscaling/v2
@@ -145,10 +149,12 @@ spec:
         averageValue: 1Gi
 ```
 
+Apply the HPA manifest:
+
 ```bash
 kubectl apply -f nginx-hpa.yaml
 ```
 
 ![alt](./images/gethpa2.png)
 
-Here, we can see the CPU usage which is `<unknown>` before defining the resource requirements of the pod definition.
+Now, the HPA reflects the correct resource utilization metrics.

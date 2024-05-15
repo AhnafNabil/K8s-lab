@@ -1,13 +1,13 @@
 # Mounting a secret as a volume
 
-In this lab, our task is to create a new Secret named basic-auth of type kubernetes.io/basic-auth. Assign the key-value pairs 
+In this lab, our task is to create a new Secret named `basic-auth` of type kubernetes.io/basic-auth. Assign the key-value pairs 
     `username=super`
     `password=my-s8cr3t`.
 Mount the Secret as a volume with the path `/etc/secret` and `read-only` permissions to the Pods controlled by the Deployment.
 
 # Steps
 
-## First we will create a secret
+## 1. Create a secret
 
 ```bash
 vim secret.yaml
@@ -30,7 +30,7 @@ kubectl apply -f secret.yaml
 
 ![alt text](./images/secret-yaml.png)
 
-## Create the deployment
+## 2. Create the deployment
 
 ```bash
 vim nginx-deploy-secret.yaml
@@ -70,7 +70,7 @@ kubectl apply -f nginx-deploy-secret.yaml
 
 ![alt text](./images/nginx-deploy-secret.png)
 
-## Now verify the deployment and secret created correctly and running
+## 3. Verify the Deployment and Secret
 
 ```bash
 kubectl get all
@@ -83,16 +83,16 @@ kubectl get secret
 
 ![alt text](./images/view-secret.png)
 
-## View secret
+## 4. View secret details
 
 ```bash
 kubectl get secret basic-auth -o yaml
 ```
 ![alt text](./images/view-secret-wide.png)
 
-## Verify Mount
+## 5. Verify Mount
 
-To verify the volume mount we can exec a bash command in the pod.
+To verify that the Secret is correctly mounted as a volume, we can exec into one of the Pods:
 
 ```bash
 kubectl exec -it <pod_name> -- /bin/bash
