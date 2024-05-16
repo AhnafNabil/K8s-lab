@@ -12,9 +12,9 @@ controlled replicas.
 
 ## Task: Create a Kubernetes Deployment object
 
-![alt text](./images/image-4.png)
+Create a Deployment named `nginx-deployment` that uses the `nginx:latest` image with `three` replicas.
 
-Create a Deployment named `nginx-deployment` that uses the `nginx` image with `three` replicas.
+![alt text](./images/image-4.png)
 
 
 ## Declarative Approach
