@@ -80,5 +80,6 @@ env
 ```
 
 This will show the environment variables from inside the container:
-![alt text](image.png)
+
+![alt text](./images/image-2.png)
 
