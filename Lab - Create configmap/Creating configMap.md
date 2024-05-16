@@ -60,7 +60,7 @@ This will create the required configMap.
 
 ## Verifying the configmap
 
- You can view the created configMaps: (optional)
+We can view the created configMaps: 
     
 ```bash
 kubectl get configmap
