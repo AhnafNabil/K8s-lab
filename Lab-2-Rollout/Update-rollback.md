@@ -12,7 +12,7 @@ In Kubernetes, rollouts and rollbacks are vital for managing application deploym
 
 To initialize a deployment with the  NGINX image (version 1.21.3), we can create a YAML file with the following contents
 
-```
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -40,6 +40,8 @@ By using the kubectl command ``kubectl apply -f deployment.yaml` we can initiali
 
 To rollout an update with latest image version of nginx, we can edit the deployment's YAML configuration file to change the image version or we can use .After editing, apply the updated configuration using ``kubectl apply``.This will trigger a rollout, updating the NGINX deployment with the new image version.
 
+<div style="text-align:center"><img src="./images/rollout.png" width="800"></div>
+
 **Update the image version from command line (optional)**
 
 Without configuring the yaml file we can simply set the image version in command
@@ -56,7 +58,7 @@ kubectl rollout status deployment nginx-deployment
 
 Expected output:
 
-<div style="text-align:center"><img src="./images/5.png" ></div>
+<div style="text-align:center"><img src="./images/5.png" width="800"></div>
 
 
 To monitor the rollout history (optional)
