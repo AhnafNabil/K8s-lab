@@ -26,28 +26,28 @@ There are two ways to create a pod:
 
 ### Declarative approach
 
-1. Create the YAML file 
+1. Create the YAML file and open it using `vim`:
 
     ```bash
     vim my-pod.yaml
     ```
 
-2. Paste the following content into my-pod.yaml
+2. Paste the following content into `my-pod.yaml`:
 
     ```yaml
     apiVersion: v1
     kind: Pod
     metadata:
-    name: my-nginx
+        name: my-nginx
     spec:
-    containers:
-    - name: nginx
-        image: nginx:latest
-        ports:
-        - containerPort: 80
+        containers:
+        - name: nginx
+          image: nginx:latest
+          ports:
+          - containerPort: 80
     ```
 
-3. Save and close the file.Apply the YAML file
+3. Save and close the file.Apply the YAML file:
 
     ```bash
     kubectl apply -f my-pod.yaml
