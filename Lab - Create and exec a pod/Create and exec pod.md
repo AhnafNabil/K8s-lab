@@ -1,6 +1,6 @@
 # Create and Execute Commands in a Kubernetes Pod
 
-In this lab, you will learn how to create a Kubernetes pod and execute commands inside the pod. This skill is fundamental for managing applications running in Kubernetes, as it allows you to interact directly with the containerized applications for debugging, monitoring, and management purposes.
+In this lab, we will learn how to create a Kubernetes pod and execute commands inside the pod. This skill is fundamental for managing applications running in Kubernetes, as it allows us to interact directly with the containerized applications for debugging, monitoring, and management purposes.
 
 
 ## Task
@@ -63,7 +63,7 @@ kubectl get pod
 
 We should see the `my-nginx` pod in the list with the status Running:
 
-![alt text](image.png)
+![alt text](./images/image.png)
 
 ##  Execute a Command Inside the Pod
 
@@ -85,7 +85,7 @@ nginx -v
 
 Expected output:
 
-![alt text](image-1.png)
+![alt text](./images/image-1.png)
 
 To exit the shell use the following command from inside the shell:
 
