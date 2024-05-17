@@ -1,23 +1,20 @@
-#  Consuming a ConfigMap as Environment Variables
+#  Mounting a ConfigMap as a Volume
 
 A ConfigMap in Kubernetes is like a dictionary that stores configuration data, such as environment variables, in key-value pairs. It's used to separate configuration from application code, making it easier to manage and update settings without changing the application itself.
 
-## How does a ConfigMap work?
+## How does mounting a ConfigMap as volume works?
 
-First, we create a ConfigMap in our cluster. We can use a YAML definition file to create it.
-Second, we consume to ConfigMap in our Pods and use its values as environment variables.
+Mounting a ConfigMap as a volume allows the configuration data to be exposed as files within a specified directory in the container's filesystem. The key becomes the filename and value becomes the file content. This method is particularly useful when you have multiple configuration files or you want to leverage Kubernetes' ability to manage and update configuration files dynamically.
 
 ![alt text](./images/image.png)
 
-## Task: Create a configMap and add environment variables
-Create a ConfigMap named `db-config` in Kubernetes containing environment variables for database running in a pod named `my-db`. The pod uses the `mysql` image.
+## Task: Create configmap and mount configmap as volume in pod
+Create a ConfigMap named `db-config` in Kubernetes containing environment variables for database running in a pod named `my-db`. The pod uses the `mysql` image. We will then mount our configmap as volume in the pod.
 
 Environment variables to be included:
 
 - `MYSQL_ROOT_PASSWORD`: `abc123`
-
 - `MYSQL_USER`: `user1`
-
 - `MYSQL_PASSWORD`: `user1@mydb`
 
 
@@ -35,63 +32,39 @@ We can inspect the ConfigMap using the following command:
 kubectl get configmap
 ```
 
-## Injecting into pods as environment variables
 
-Now we need to create a YAML manifest file `pod-definition.yaml` that contains the pod definitions. Here is the pod definition file with env variable form configMap we just created using `envFrom` with `configMapRef`:
+## Mounting into pods as volume
+
+Now we need to create a YAML manifest file `pod-definition.yaml` that contains the pod definitions. Here is the pod definition file with `volumes` that mounts the configMap we just created:
 
 ```yaml
-apiVersion: v1 
-kind: Pod 
+apiVersion: v1
+kind: Pod
 metadata:
   name: my-db
-  labels:
-    name: my-db
 spec:
   containers:
-  - name: my-db
+  - name: mysql
     image: mysql
     envFrom:
     - configMapRef:
         name: db-config
-```
+    volumeMounts:
+    - name: config-volume
+      mountPath: /etc/config
+  volumes:
+  - name: config-volume
+    configMap:
+      name: db-config
 
-There is another way to inject into the pod definition. Here is an example of how to inject into the pod using `env` with `configMapKeyRef`:
-
-```yaml
-apiVersion: v1 
-kind: Pod 
-metadata:
-  name: my-db
-  labels:
-    name: my-db
-spec:
-  containers:
-  - name: my-db
-    image: mysql
-    env:
-    - name: MYSQL_ROOT_PASSWORD
-      valueFrom:
-        configMapKeyRef:
-          name: db-config
-          key: MYSQL_ROOT_PASSWORD
-    
-    - name: MYSQL_USER
-      valueFrom:
-        configMapKeyRef:
-          name: db-config
-          key: MYSQL_USER
-
-    - name: MYSQL_PASSWORD
-      valueFrom:
-        configMapKeyRef:
-          name: db-config
-          key: MYSQL_PASSWORD
 ```
 
 Run the following command to create the pod:
 ```
 kubectl create -f pod-definition.yaml
 ```
+
+
 
 ## Verifying the configmap and environment variables
 
@@ -103,7 +76,7 @@ kubectl create -f pod-definition.yaml
 
   Expected result:
 
-  ![alt text](./images/image-3.png)
+  ![alt text](./images/image-1.png)
 
 
 - We use the following command to see the created pod:
@@ -113,7 +86,7 @@ kubectl create -f pod-definition.yaml
   ```
   Expected result:
 
-  ![alt text](./images/image-1.png)
+  ![alt text](./images/image-2.png)
 
 
 - Now, let's check the environment variables from inside the container:
@@ -131,4 +104,4 @@ kubectl create -f pod-definition.yaml
 
   This will show the environment variables from inside the container:
 
-  ![alt text](./images/image-2.png)
+  ![alt text](./images/image-3.png)
