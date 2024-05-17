@@ -105,3 +105,16 @@ kubectl create -f pod-definition.yaml
   This will show the environment variables from inside the container:
 
   ![alt text](./images/image-3.png)
+
+  Now if we run the following command from inside the container:
+
+  ```shell
+  cd /etc/config
+  ls
+  ```
+
+  We can see 3 files created. The key from the configmap became the filename and value becomes the file content.
+
+  Here is the output:
+
+  ![alt text](./images/image-4.png)
