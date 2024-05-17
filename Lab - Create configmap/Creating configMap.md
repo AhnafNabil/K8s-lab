@@ -15,7 +15,7 @@ Mounting a ConfigMap as a volume allows the configuration data to be exposed as 
 
 Here is a demonstration of how to mount a ConfigMap:
 
-![alt text](image.png)
+![alt text](./images/image-4.png)
 
 
 
