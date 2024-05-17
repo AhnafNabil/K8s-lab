@@ -75,5 +75,9 @@ All the pods will be in one node which was labeled.
 
 <div style="text-align:center"><img src="./images/Screenshot 2024-05-17 170943.png" width="700"></div>
 
+### Shortcomings of `NodeSelector`
+
+In our scenario, we use nodeSelector to schedule Pods on nodes labeled `processing: high`. But, if we have multiple such nodes, nodeSelector doesn't prioritize. It might schedule Pods on a nearly full node instead of a less utilized one. For better control, we can use Node Affinity to set more specific scheduling rules.
+
 
 
