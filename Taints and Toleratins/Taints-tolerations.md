@@ -80,13 +80,15 @@ kubectl get nodes
 ```
 this will provide the names of `nodes` in the `cluster`.
 
-##### Apply the taint to the node (`cluster-uisxuw-worker-1`):
+Assuming `node1`= desired `<Node-name>`
+
+##### Apply the taint to the node (`node1`):
 
 ```
-kubectl taint nodes cluster-uisxuw-worker-1 app=res-intensive:NoSchedule
+kubectl taint nodes node1 app=res-intensive:NoSchedule
 ```
 
-This command applies a taint with the key `app`, value `res-intensive`, and effect `NoSchedule` to cluster-uisxuw-worker-1.
+This command applies a taint with the key `app`, value `res-intensive`, and effect `NoSchedule` to node1.
 
 We can also apply taint with a specific effect (Optional):
 
