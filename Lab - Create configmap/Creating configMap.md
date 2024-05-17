@@ -4,6 +4,26 @@ A ConfigMap in Kubernetes is like a dictionary that stores configuration data, s
 
 ![alt text](./images/image-2.png)
 
+
+In Kubernetes, there are two primary ways to mount a ConfigMap into a pods. Each method has its use cases and benefits. Here's an explanation of both methods:
+
+### 1. Mounting a ConfigMap as Environment Variables
+Mounting a ConfigMap as environment variables allows the configuration data to be exposed as environment variables within the container. This method is useful for simple key-value configurations and for applications that read configuration from environment variables.
+
+### 2. Mounting a ConfigMap as a Volume
+Mounting a ConfigMap as a volume allows the configuration data to be exposed as files within a specified directory in the container's filesystem. The key becomes the filename and value becomes the file content. This method is particularly useful when you have multiple configuration files or you want to leverage Kubernetes' ability to manage and update configuration files dynamically.
+
+Here is a demonstration of how to mount a ConfigMap:
+
+![alt text](image.png)
+
+
+
+
+
+
+
+
 There are two ways to create a configMap just like any other kubernetes object: 
 - Imperative Approach 
 - Declarative Approach 
