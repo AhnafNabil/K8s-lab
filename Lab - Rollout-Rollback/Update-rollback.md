@@ -77,4 +77,4 @@ kubectl rollout undo deployment nginx-deployment
 
 By executing this command, Kubernetes will automatically identify the previous revision of the deployment configuration and roll back to that state.
 
-<div style="text-align:center"><img src="./images/67.png" width="700" ></div>
+<div style="text-align:center"><img src="./images/67.png" ></div>
