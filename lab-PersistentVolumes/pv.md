@@ -4,15 +4,14 @@ A `Persistent Volume (PV)` in Kubernetes is a piece of storage in the cluster th
 
 ![pvc_claim](./image/pvc_claim.png)
 
-<details>
-  <summary><strong>Key Concepts about Persistent Volume</strong></summary>
+## key concepts about PersistentVolume
 
-  1. **PersistentVolumeClaim (PVC)**
+1. **PersistentVolumeClaim (PVC)**
      - A PVC is a request for storage by a user.
      - Users can request specific sizes and access modes (e.g., can be mounted once read-write or many times read-only).
      - PVCs are bound to PVs in a one to one relationship, and Kubernetes ensures that the requested storage is available and appropriately matched.
 
-  2. **Access Modes**: 
+2. **Access Modes**: 
   Each PersistentVolume can express how it can be accessed using the attribute spec.accessModes.
      - `ReadWriteOnce (RWO)`: The volume can be mounted as read-write by a single node.
      - `ReadOnlyMany (ROX)`: The volume can be mounted as read-only by many nodes.
@@ -30,15 +29,11 @@ A `Persistent Volume (PV)` in Kubernetes is a piece of storage in the cluster th
 
 ## Example task
 
-Create a `Persistent Volume` name `db-pv` with capacity `1Gi` and path `/data/db`. Then create a `Persistent Volume Claim (PVC)` named `db-pvc` with a size of `256Mi` and access mode `ReadWriteOnce`. Finally mount the PersistentVolumeClaims in a Pod.
+Create a `Persistent Volume` name `db-pv` with capacity `1Gi` and path `/data/db`. Then create a `Persistent Volume Claim (PVC)` named `db-pvc` with a size of `256Mi` and access mode `ReadWriteOnce`.
 
-### 1. Creating PersistentVolumes
+### 1. Create PersistentVolumes
 
-Create a yaml definition file of kind `PersistentVolume`.
-
-```bash
-vim pv.yaml
-```
+We can create a PersistenVolume object using yaml definition file `pv.yaml` of kind `PersistentVolume`.
 
 ```yaml
 apiVersion: v1
@@ -67,13 +62,9 @@ kubectl get pv
 
 The status `Available` indicates that the object is ready to be claimed.
 
-### 2. Creating PersistentVolumeClaims (PVC)
+### 2. Create PersistentVolumeClaims (PVC)
 
-Now create a yaml definition file of kind `PersistentVolumeClaim` for PVC.
-
-```bash
-vim pvc.yaml
-```
+Now we will create a yaml definition file `pvc.yaml` of kind `PersistentVolumeClaim` for PVC.
 
 ```yaml
 kind: PersistentVolumeClaim
@@ -105,67 +96,5 @@ kubectl describe pvc db-pvc
 
 ![pvc_status](./image/pvc_status.png)
 
-Once a PersistentVolumeClaim (PVC) is created, if its status is `Bound`, it indicates a successful binding to a PersistentVolume (PV). But as of now it is not mounted to any pod. That why `Used by` is showing `<none>`
-
-### 3. Mounting PersistentVolumeClaims in a Pod
-
-```bash
-vim pod.yaml
-```
-
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: app-consuming-pvc
-spec:
-  volumes:
-    - name: app-storage
-      persistentVolumeClaim:
-        claimName: db-pvc
-  containers:
-    - image: alpine
-      name: app
-      command: ["/bin/sh"]
-      args: ["-c", "while true; do sleep 60; done;"]
-      volumeMounts:
-        - mountPath: "/mnt/data"
-          name: app-storage
-```
-
-```bash
-kubectl create -f pod.yaml
-```
-
-After creating the pod, the `describe` command will provide additional information on the volume:
-
-```bash
-kubectl get pods
-kubectl describe pod app-conuming-pvc
-```
-![pod_status](./image/pod_status.png)
-
-The PersistantVolume now shows that it is `bounded`
-
-![pvc_status2](./image/pv_status2.png)
-
-
-The PersistentVolumeClaim now also shows the Pod that mounted it:
-
-![pvc_status2](./image/pvc_status2.png)
-
-
-Now we can go ahead and open an interactive shell to the Pod. Navigating to the mount path at /mnt/data gives you access to the underlying PersistentVolume:
-
-```bash
-kubectl exec app-consuming-pvc -it -- /bin/sh
-cd /mnt/data
-ls -l
-touch demo.db
-ls -l
-```
-
-![pod_shell](./image/pod_shell.png)
-
-
-In this example, we have created a PV named `db-pv` which is a `1Gi` storage volume located at `/data/db` on the `host`. The PVC `db-pvc` requests a volume with `ReadWriteOnce` access mode and `256Mi` of storage. The pod `app-consuming-pvc` uses this PVC, mounting it at `/mnt/data` inside the container.
+Once a PersistentVolumeClaim (PVC) is created, if its status is `Bound`, it indicates a successful binding to a PersistentVolume (PV). But as of now it is not mounted to any pod. Thats why `Used by` attribute is showing `<none>`
+We will do the pod mounting in the next lab.
