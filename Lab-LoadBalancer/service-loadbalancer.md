@@ -1,6 +1,14 @@
 # Kubernetes Service Using NodePort
 
-## Accessing Kubernetes Services via LoadBalancer
+## Load Balancer
+
+![alt text](./images/load-balancer.PNG)
+
+A Load Balancer is a service type that provides external access to a set of pods in a cluster. It distributes incoming traffic among the pods to ensure high availability, scalability, and reliability of the application running in the cluster.
+
+Load balancing becomes necessary in various scenarios, primarily when we have multiple instances of our application running simultaneously, and we want to distribute incoming traffic among them efficiently.
+
+## Task: Accessing Kubernetes Services via LoadBalancer
 
 This guide outlines the steps to create a nginx-deployment service and accessing the service using LoadBalancer. The final goal is to access the targeted nginx-pod and curl the application using LoadBalancer externally using a external IP address that can be used to access the application from outside the Kubernetes cluster.
 
@@ -13,7 +21,7 @@ sudo apt update
 sudo apt install vim
 ```
 
-## Steps
+## Required Steps
 
 ### 1. Create Nginx-deployment File
 
@@ -106,7 +114,7 @@ kubectl get services
 
 ![alt text](./images/load-balancer-svc.png)
 
-### 6. Curl using NodePort
+### 6. Curl using LoadBalancer
 
 We can access the Nginx server through any of our Kubernetes cluster external IP addresses.
 
