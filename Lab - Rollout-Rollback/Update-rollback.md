@@ -8,6 +8,7 @@ In Kubernetes, rollouts and rollbacks are vital for managing application deploym
 
 - **Rollback in Kubernetes**: A rollback in Kubernetes is the process of reverting an application to a previous version. This is useful if the new version has issues or bugs. Kubernetes keeps track of previous versions, allowing you to quickly revert to a stable state.
 
+<div style="text-align:center"><img src="./images/rollback-definition.jpg"></div>
 
 ## Initialize Deployment with NGINX Image
 
