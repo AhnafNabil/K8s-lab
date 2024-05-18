@@ -24,7 +24,10 @@ kubectl get namespace
 
 ![alt text](./images/Namespace-02.PNG)
 
-## Task: Creating a Namespace
+## Task: Creating a Namespace and Creating a pod definition file in a specific namespace
+
+This document will guide you through the process of creating a namespace using command-line tool as well as using a YAML configuration file. We will further create a pod in a specfic namespace.
+
 
 Namespaces can be created using the kubectl command-line tool or by defining them in a YAML configuration file.
 
@@ -70,7 +73,7 @@ kubectl create namespace my-namespace
 
     ![alt text](./images/Namespace-05.png)
 
-## Task: Creating a pod definition file in a specific namespace
+## Creating a pod definition file in a specific namespace
 
 Here we will create a simple pod definition file in the created namespace called ``my-namespace``.
 
