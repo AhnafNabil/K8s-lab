@@ -1,8 +1,8 @@
 # Rolling Updates and Rollbacks in Kubernetes Deployment
 
-In Kubernetes, rollouts and rollbacks are vital for managing application deployments. 
+In Kubernetes, rolling updates and rollbacks are vital for managing application deployments. 
 
-- **Rolling Update in Kubernetes**: Gradually introducing updates or changes to an application to ensure a smooth transition and minimize disruptions.
+- **Rolling Update in Kubernetes**: A rolling update in Kubernetes is a way to update applications running in your cluster without downtime. It gradually replaces old versions of the application with new ones, one pod at a time. This ensures that the application remains available to users throughout the update process.
 
 <div style="text-align:center"><img src="./images/rolling-definition.jpg"></div>
 
