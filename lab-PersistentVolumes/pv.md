@@ -52,7 +52,6 @@ spec:
     - ReadWriteOnce
   hostPath:
     path: /data/db
-
 ```
 
 ```bash
@@ -162,7 +161,7 @@ Now we can go ahead and open an interactive shell to the Pod. Navigating to the 
 kubectl exec app-consuming-pvc -it -- /bin/sh
 cd /mnt/data
 ls -l
-touch test.db
+touch demo.db
 ls -l
 ```
 
