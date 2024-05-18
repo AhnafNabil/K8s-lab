@@ -6,7 +6,7 @@
 
 ClusterIP is the default service type in Kubernetes, and it provides internal connectivity between different components of our application. Kubernetes assigns a virtual IP address to a ClusterIP service that can solely be accessed from within the cluster during its creation. This IP address is stable and doesn’t change even if the pods behind the service are rescheduled or replaced.
 
-## Accessing Kubernetes Services via ClusterIP
+## Task: Accessing Kubernetes Services via ClusterIP
 
 This guide outlines the steps to create a nginx-deployment service and accessing the service using clusterIP. The final goal is to access the targeted nginx-pod and curl the application using ClusterIP internally within the cluster.
 
@@ -21,13 +21,13 @@ sudo apt update
 sudo apt install vim
 ```
 
-## Steps
+## Required Steps
 
 ### 1. Create Nginx-deployment File
 
 Let's create a Nginx-deployment file with three replica of pods running:
 
-```bash
+```yaml
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -57,7 +57,7 @@ Now, see the yaml file using ``cat nginx-deployment.yaml``.
 
 Let's write a YAML manifest file for the Nginx-deployment file which specifies the service type as NodePort, allowing external access to the service.
 
-```bash
+```yaml
 apiVersion: v1
 kind: Service
 metadata:
@@ -100,7 +100,7 @@ kubectl get services
 
 We can also get all the information by using ``kubectl get all``
 
-![alt text](./images/clusterip-all.PNG)
+![alt text](./images/Get-all.PNG)
 
 If the pods and services are runnung, we are ready for accessing Nginx using ClusterIP within the cluster.
 
@@ -112,19 +112,19 @@ To get the clusterIP of the service in a Kubernetes cluster, we can use the kube
 kubectl get services
 ```
 
-![alt text](./images/clusterip-service-marked.PNG)
+![alt text](./images/svc-clusterip.png)
 
 ### 6. Curl using ClusterIP
 
 We can access the Nginx server through the clusterIP of the nginx service internally.
 
 ```bash
-curl 10.43.86.189:80
+curl http://10.43.144.74:80
 ```
 
 ## Expected Output
 
-![alt text](./images/nginx-output.PNG)
+![alt text](./images/clusterip-output.PNG)
 
 
 
