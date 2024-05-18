@@ -1,8 +1,8 @@
-# Injecting a ConfigMap as Environment Variables
+# Injecting a Secret as Environment Variables
 
 In Kubernetes, `secrets` are used to store and manage sensitive information, such as passwords, OAuth tokens, and SSH keys. By injecting secrets as environment variables, we can securely provide this sensitive information to out applications running inside Pods.
 
-## How does mounting a Secret as env variable works?
+## How does it works?
 
 Secrets live out their lives in `etcd`, the central datastore for the entire Kubernetes system. This is the same central location where declarative definitions for Kubernetes Deployments live. This centralized storage approach allows users to create one Secret that can then be consumed by any number of Pods, whether those Pods are identical copies of one another (as would be the case with a Deployment or ReplicaSet) or not.
 
