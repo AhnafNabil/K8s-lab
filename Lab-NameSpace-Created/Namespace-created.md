@@ -109,6 +109,10 @@ To view all resources within a specific namespace:
 kubectl get all --namespace=my-namespace
 ```
 
+![alt text](./images/Namespace-07.PNG)
+
+Here we can see there is one pod created and running in the ``my-namespace`` namespace.
+
 ## Deleting a Namespace
 
 To delete a namespace and all the resources within it:
@@ -116,8 +120,10 @@ To delete a namespace and all the resources within it:
 ```bash
 kubectl delete namespace my-namespace
 ```
+![alt text](./images/Namespace-08.PNG)
 
-## Switching Namespace
+There is no namespace called ``my-namespace`` after deletion.
+
 
 
 
