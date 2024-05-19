@@ -2,7 +2,7 @@
 
 In this lab, we will learn how to create a Kubernetes pod and execute commands inside the pod. This skill is fundamental for managing applications running in Kubernetes, as it allows us to interact directly with the containerized applications for debugging, monitoring, and management purposes.
 
-![alt text](./images/image-2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20and%20exec%20a%20pod/images/image-2.png?raw=true" alt="" />
 
 
 ## Task
@@ -65,7 +65,7 @@ kubectl get pod
 
 We should see the `my-nginx` pod in the list with the status Running:
 
-![alt text](./images/image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20and%20exec%20a%20pod/images/image.png?raw=true" alt="" />
 
 ##  Execute a Command Inside the Pod
 
@@ -87,7 +87,7 @@ nginx -v
 
 Expected output:
 
-![alt text](./images/image-1.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20and%20exec%20a%20pod/images/image-1.png?raw=true" alt="" />
 
 To exit the shell use the following command from inside the shell:
 
