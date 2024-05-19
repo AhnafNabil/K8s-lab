@@ -1,8 +1,10 @@
 # Understanding Secret
 
-In Kubernetes, a `Secret` is an object used to store sensitive information such as passwords, OAuth tokens, and SSH keys. They are similar to configMaps, except that they are stored in an encoded or hashed format. Secrets are intended to be used to pass sensitive data to Pods in a secure manner, without exposing it to the Pod configuration or the container image.
+In Kubernetes, a `Secret` is an object used to store sensitive information such as passwords, OAuth tokens, and SSH keys. They are similar to configMaps, except that they are stored in an encoded or hashed format. Secrets are intended to be used to pass sensitive data to Pods in a secure manner, without exposing it to the Pod configuration or the container image. Secret is created and stored in `etcd` server.
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Secret/images/secret-overview.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Secret/images/secret-overview2.png?raw=true" alt="" />
+
+By default, Kubernetes Secrets are stored unencrypted in the API server's underlying data store `etcd`. This means that anyone with `API access` can retrieve or modify a Secret, as well as anyone with access to etcd. Furthermore, anyone authorized to create a Pod within a namespace can also read any Secret in that namespace.
 
 # Create Secret
 
