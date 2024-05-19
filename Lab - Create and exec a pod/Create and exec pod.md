@@ -2,6 +2,8 @@
 
 In this lab, we will learn how to create a Kubernetes pod and execute commands inside the pod. This skill is fundamental for managing applications running in Kubernetes, as it allows us to interact directly with the containerized applications for debugging, monitoring, and management purposes.
 
+![alt text](./images/image-2.png)
+
 
 ## Task
 
