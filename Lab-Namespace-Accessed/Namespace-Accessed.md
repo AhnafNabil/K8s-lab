@@ -4,7 +4,7 @@
 
 Kubernetes namespaces provide a way to partition resources within a cluster. By default, Pods in different namespaces cannot communicate with each other directly using their default DNS names. However, there are ways to enable cross-namespace communication. This document will guide you through the process of accessing a Pod from a different namespace.
 
-![alt text](./images/Ns-access-01.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-Namespace-Accessed/images/Ns-access-01.PNG)
 
 Here we will deploy a Nginx deployment in ``namespace-a`` and will try to access the nginx pod from the ``namespace-b`` where the busybox image is deployed.
 
@@ -33,7 +33,7 @@ Now, check that the namespaces are created using:
 kubectl get namespace
 ```
 
-![alt text](./images/Ns-access-02.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-Namespace-Accessed/images/Ns-access-02.png)
 
 ## 2. Deploy NGINX in namespace-a:
 
@@ -97,7 +97,7 @@ For checking whether the nginx pods and services are running in the namespace-a 
 kubectl get all -n namespace-a
 ```
 
-![alt text](./images/Ns-access-03.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-Namespace-Accessed/images/Ns-access-03.PNG)
 
 ## 4. Deploy BusyBox in namespace-b:
 
@@ -148,7 +148,7 @@ wget -qO- http://nginx-service.namespace-a.svc.cluster.local
 
 ## Expected Output:
 
-![alt text](./images/Ns-access-04.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-Namespace-Accessed/images/Ns-access-04.PNG)
 
 By following these above steps, we have successfully accessed an NGINX service in ``namespace-a`` from a BusyBox pod in ``namespace-b``.
 
