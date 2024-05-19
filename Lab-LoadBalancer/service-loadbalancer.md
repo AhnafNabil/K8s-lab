@@ -2,7 +2,7 @@
 
 ## Load Balancer
 
-![alt text](./images/load-balancer.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-LoadBalancer/images/load-balancer.PNG)
 
 A Load Balancer is a service type that provides external access to a set of pods in a cluster. It distributes incoming traffic among the pods to ensure high availability, scalability, and reliability of the application running in the cluster.
 
@@ -100,7 +100,7 @@ kubectl get services
 
 We can also get all the information by using ``kubectl get all``
 
-![alt text](./images/load-balancer-all.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-LoadBalancer/images/load-balancer-all.png)
 
 If the pods and services are runnung, we are ready for accessing Nginx using LoadBalancer.
 
@@ -112,7 +112,7 @@ To get the External IP address of the node in a Kubernetes cluster, we can use t
 kubectl get services
 ```
 
-![alt text](./images/load-balancer-svc.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-LoadBalancer/images/load-balancer-svc.png)
 
 ### 6. Curl using LoadBalancer
 
@@ -124,4 +124,4 @@ curl http://10.62.2.195:8080
 
 ## Expected Output
 
-![alt text](./images/load-balancer-output.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-LoadBalancer/images/load-balancer-output.PNG)
