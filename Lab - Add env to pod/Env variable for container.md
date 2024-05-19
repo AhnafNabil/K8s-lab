@@ -2,7 +2,7 @@
 
 Environment variables are commonly used to configure applications and provide runtime parameters without modifying the application code or container image. There are many ways to set environment variables such as using plain key-value pairs, using configMaps, using secrets etc. In this exercise we will pass environment variables using simple key-value pairs.
 
-![alt text](./images/image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Add%20env%20to%20pod/images/image.png?raw=true" alt="" />
 
 There are two ways of creating pods with environment variables: imperatively and declaratively. We can use any one of this approach.
 
