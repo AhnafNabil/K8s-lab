@@ -5,7 +5,7 @@ A Deployment in Kubernetes is a higher-level abstraction over a ReplicaSet that 
 
 Deployment offers a more sophisticated way to manage the entire lifecycle of those pods, including updates, rollbacks, and scaling, providing a higher level of abstraction and more powerful features.
 
-![alt text](./images/image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20a%20deployment/images/image.png?raw=true" alt="" />
 
 In this example, we have illustrated the relationship between a Deployment, a ReplicaSet, and its
 controlled replicas.
@@ -14,7 +14,7 @@ controlled replicas.
 
 Create a Deployment named `nginx-deployment` that uses the `nginx:latest` image with `three` replicas.
 
-![alt text](./images/image-4.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20a%20deployment/images/image-4.png?raw=true" alt="" />
 
 
 ## Declarative Approach
@@ -75,7 +75,7 @@ Create a Deployment named `nginx-deployment` that uses the `nginx:latest` image 
 
     The expected output:
 
-    ![alt text](./images/image-1.png)
+    <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20a%20deployment/images/image-1.png?raw=true" alt="" />
 
 You have successfully created the deployment!
 
@@ -103,7 +103,7 @@ kubectl get deployments
 
 The expected output:
 
-![alt text](./images/image-2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20a%20deployment/images/image-2.png?raw=true" alt="" />
 
 Use the following command to list the Pods:
 
@@ -113,7 +113,7 @@ kubectl get pods
 
 The expected output:
 
-![alt text](./images/image-3.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20a%20deployment/images/image-3.png?raw=true" alt="" />
 
 
 ## Delete the Deployment
