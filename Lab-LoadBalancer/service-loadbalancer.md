@@ -1,4 +1,4 @@
-# Kubernetes Service Using NodePort
+# Kubernetes Service Using LoadBalancer
 
 ## Load Balancer
 
