@@ -9,13 +9,14 @@ In this lab, our task is to create a new Secret named `basic-auth` of type kuber
 
 Mount the Secret as a volume with the path `/etc/secret` and `read-only` permissions to the Pods controlled by the Deployment.
 
-![](./images/overview-scrt-vol.png)
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/overview-scrt-vol.png?raw=true" alt="" />
 
 # Steps
 
 Here is the Overview of our task, mounting secret as a volume.
 
-![](./images/overview2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/overview2.png?raw=true" alt="" />
 
 
 ## 1. Create a secret
@@ -58,7 +59,7 @@ data:
 kubectl apply -f secret.yaml
 ```
 
-![alt text](./images/secret-yaml.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/secret-yaml.png?raw=true" alt="" />
 
 ## 2. Create the deployment
 
@@ -96,7 +97,7 @@ spec:
 kubectl apply -f nginx-deploy-secret.yaml
 ```
 
-![alt text](./images/nginx-deploy-secret.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/nginx-deploy-secret.png?raw=true" alt="" />
 
 ## 3. Verify the Deployment and Secret
 
@@ -105,20 +106,22 @@ Now we have to verify the deployment and the secret if they are created properly
 ```bash
 kubectl get all
 ```
-![alt text](./images/verify-all-created.png)
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/verify-all-created.png?raw=true" alt="" />
 
 ```bash
 kubectl get secret
 ```
 
-![alt text](./images/view-secret.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/view-secret.png?raw=true" alt="" />
 
 ## 4. View secret details
 
 ```bash
 kubectl get secret basic-auth -o yaml
 ```
-![alt text](./images/view-secret-wide.png)
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/view-secret-wide.png?raw=true" alt="" />
 
 ## 5. Verify Mount
 
@@ -138,7 +141,7 @@ cat /etc/secret/username
 cat /etc/secret/password
 ```
 
-![alt text](./images/verfiy-mount-final.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/verfiy-mount-final.png?raw=true" alt="" />
 
 So, we have successfully mounted a secret as a volume with the specific path and the given requirements.
 

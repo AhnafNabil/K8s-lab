@@ -2,7 +2,7 @@
 
 A `Persistent Volume (PV)` in Kubernetes is a piece of storage in the cluster that has been provisioned by an administrator or dynamically provisioned using `StorageClasses`. PVs are resources in the cluster that provide storage to users and have a lifecycle independent of any individual pod that uses the PV. For instance, database data often needs to be retained beyond the application's lifecycle. This is the role of a persistent volume.
 
-![pvc_claim](./image/pvc_claim.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-PersistentVolumes/image/pvc_claim.png?raw=true" alt="" />
 
 ## key concepts about PersistentVolume
 
@@ -23,8 +23,7 @@ A `Persistent Volume (PV)` in Kubernetes is a piece of storage in the cluster th
      - `Recycle`: Basic scrub (rm -rf /thevolume/*).
      - `Delete`: Associated storage asset, such as AWS EBS, GCE PD, or Azure Disk, is deleted.
 
-  ![pvc_claim2](./image/pv_claim2.png)
-</details>
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-PersistentVolumes/image/pv_claim2.png?raw=true" alt="" />
 
 
 ## Example task
@@ -53,12 +52,13 @@ spec:
 kubectl create -f pv.yaml
 ```
 
-Get information about PV
+To get information about PV, we can run
 
 ```bash
 kubectl get pv
 ```
-![pvc_pv](./image/pv_status.png)
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-PersistentVolumes/image/pv_status.png?raw=true" alt="" />
 
 The status `Available` indicates that the object is ready to be claimed.
 
@@ -84,7 +84,7 @@ spec:
 kubectl create -f pvc.yaml
 ```
 
-After creating PVC we can get the more information by these commands.
+After creating PVC we can get more information by these commands.
 
 ```bash
 kubectl get pvc
@@ -94,7 +94,7 @@ kubectl get pvc
 kubectl describe pvc db-pvc
 ```
 
-![pvc_status](./image/pvc_status.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-PersistentVolumes/image/pvc_status.png?raw=true" alt="" />
 
 Once a PersistentVolumeClaim (PVC) is created, if its status is `Bound`, it indicates a successful binding to a PersistentVolume (PV). But as of now it is not mounted to any pod. Thats why `Used by` attribute is showing `<none>`
 We will do the pod mounting in the next lab.

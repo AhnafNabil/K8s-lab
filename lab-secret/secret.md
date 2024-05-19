@@ -2,7 +2,7 @@
 
 In Kubernetes, a Secret is an object used to store sensitive information such as passwords, OAuth tokens, and SSH keys. They are similar to configMaps, except that they are stored in an encoded or hashed format. Secrets are intended to be used to pass sensitive data to Pods in a secure manner, without exposing it to the Pod configuration or the container image.
 
-# Creating Secret
+# Create Secret
 
 To create a Secret named `my-db-secret` with the key-value pairs `DB_Host=mysql`, `DB_User=root` and  `DB_Password=paswrd`, we can use
 
@@ -16,7 +16,10 @@ kubectl create secret generic my-db-secret \
   --from-literal=DB_User=root \
   --from-literal=DB_Password=paswrd
 ```
-![alt text](./images/secret-1.png)
+
+This command will create a secret from literal of type `generic`
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/secret-1.png?raw=true" alt="" />
 
 2. Using definition file
 
@@ -44,7 +47,7 @@ Then, run the following command to create the Secret from the definition file:
 kubectl apply -f secret.yaml
 ```
 
-![alt text](./images/secret-2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/secret-2.png?raw=true" alt="" />
 
 # Encoding secret
 
@@ -67,7 +70,8 @@ Now we have created secrets. To view the secret we can run
 ```bash
 kubectl get secrets
 ```
-![alt text](./images/get-secrets.png)
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/get-secrets.png?raw=true" alt="" />
 
 
 To view more information about the newly created secret, run
@@ -76,7 +80,7 @@ To view more information about the newly created secret, run
 kubectl describe secrets
 ```
 
-![alt text](./images/describe.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/describe.png?raw=true" alt="" />
 
 To view the information as well as the value of the secret, run
 
@@ -84,7 +88,7 @@ To view the information as well as the value of the secret, run
 kubectl get secret my-db-secret -o yaml
 ```
 
-![alt text](./images/value.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/value.png?raw=true" alt="" />
 
 Now we can see the hashed values of the secret.
 
