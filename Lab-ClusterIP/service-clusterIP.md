@@ -2,7 +2,7 @@
 
 ## ClusterIP
 
-![alt text](./images/Clusterip.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-ClusterIP/images/Clusterip.PNG)
 
 ClusterIP is the default service type in Kubernetes, and it provides internal connectivity between different components of our application. Kubernetes assigns a virtual IP address to a ClusterIP service that can solely be accessed from within the cluster during its creation. This IP address is stable and doesn’t change even if the pods behind the service are rescheduled or replaced.
 
@@ -100,7 +100,7 @@ kubectl get services
 
 We can also get all the information by using ``kubectl get all``
 
-![alt text](./images/Get-all.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-ClusterIP/images/Get-all.PNG)
 
 If the pods and services are runnung, we are ready for accessing Nginx using ClusterIP within the cluster.
 
@@ -112,7 +112,7 @@ To get the clusterIP of the service in a Kubernetes cluster, we can use the kube
 kubectl get services
 ```
 
-![alt text](./images/svc-clusterip.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-ClusterIP/images/svc-clusterip.png)
 
 ### 6. Curl using ClusterIP
 
@@ -124,7 +124,7 @@ curl http://10.43.144.74:80
 
 ## Expected Output
 
-![alt text](./images/clusterip-output.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-ClusterIP/images/clusterip-output.PNG)
 
 
 
