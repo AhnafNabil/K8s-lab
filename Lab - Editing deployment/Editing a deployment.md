@@ -2,6 +2,7 @@
 
 In this lab, we will learn how to edit an existing Kubernetes Deployment. Deployments are one of the key constructs in Kubernetes, providing declarative updates to applications. They manage the desired state for our applications by creating and updating pods, ensuring that the specified number of replicas are running and automatically replacing failed or unhealthy pods. 
 
+![alt text](image.png)
 
 ## Task: Inspect and edit a deployment
 
