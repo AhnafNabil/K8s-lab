@@ -1,11 +1,11 @@
 # Creating ConfigMap Object in Kubernetes
 
-A ConfigMap in Kubernetes is like a dictionary that stores configuration data, such as environment variables, in key-value pairs. It's used to separate configuration from application code, making it easier to manage and update settings without changing the application itself.
+A ConfigMap in Kubernetes is like a dictionary that stores configuration data, such as environment variables, in key-value pairs. It's used to separate configuration from application code.
 
-![alt text](./images/image-2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20configmap/images/image-2.png?raw=true" alt="" />
 
 
-In Kubernetes, there are two primary ways to mount a ConfigMap into a pods. Each method has its use cases and benefits. Here's an explanation of both methods:
+In Kubernetes, there are two primary ways to mount a ConfigMap into a pods. Here's an explanation of both methods:
 
 ### 1. Mounting a ConfigMap as Environment Variables
 Mounting a ConfigMap as environment variables allows the configuration data to be exposed as environment variables within the container. This method is useful for simple key-value configurations and for applications that read configuration from environment variables.
@@ -15,11 +15,7 @@ Mounting a ConfigMap as a volume allows the configuration data to be exposed as 
 
 Here is a demonstration of how to mount a ConfigMap:
 
-![alt text](./images/image-4.png)
-
-
-
-
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20configmap/images/image-4.png?raw=true" alt="" />
 
 
 
@@ -88,7 +84,7 @@ kubectl get configmap
 
 Expected result:
 
-![alt text](./images/image-1.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20configmap/images/image-1.png?raw=true" alt="" />
 
 To see the details of this configMap use the following command:
 
@@ -98,4 +94,4 @@ kubectl describe configmap db-config
 
 Expected result:
 
-![alt text](./images/image-3.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20configmap/images/image-3.png?raw=true" alt="" />
