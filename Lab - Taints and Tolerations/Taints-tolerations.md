@@ -15,11 +15,14 @@ In Kubernetes, taints can be assigned one of three effects: NoSchedule, PreferNo
 
 ## Task:
 
- let's consider a scenario where we have a Kubernetes cluster with multiple nodes and we want to ensure that a particular set of pods (let's say, res-intensive pods) only run on a specific node.
+- Create a deployment with 3 NGINX pods that can tolerate a specific taint.
+- Create a deployment with 3 NGINX pods without tolerations.
+- Label a node with a taint to restrict pod scheduling.
+- Deploy both configurations and ensure pods are running on the appropriate nodes.
 
-<div style="text-align:center"><img src="./images/task.png" width="800"></div>
+![Task-Visualization](https://github.com/Galadon123/images/blob/main/Lab%20-%20Taints%20and%20Tolerations/images/task.png?raw=true)
 
-### Create A deployment(deployment.yaml) with 3 replicas of pods with toleration
+## Creating a deployment with toleration
 
 ```yaml
 apiVersion: apps/v1
@@ -48,7 +51,7 @@ spec:
 
 This YAML defines a `Deployment` with the specified container and toleration settings, ensuring that three replicas of the `pod` are created
 
-### Create A deployment(deployment2.yaml) with 3 replicas of pods without toleration
+## Creating a deployment without toleration
 
 ```yaml
 apiVersion: apps/v1
@@ -71,18 +74,20 @@ spec:
 ```
 
 
-### Applying Taints on node
+## Applying Taints on node
 
-##### Identifying the `node`to taints:
+### Identifying the `node`to taints:
 
 ```
 kubectl get nodes
 ```
 this will provide the names of `nodes` in the `cluster`.
 
+![nodes](https://github.com/Galadon123/images/blob/main/Lab%20-%20Taints%20and%20Tolerations/images/new-1.png?raw=true)
+
 Assuming `node1`= desired `<Node-name>`
 
-##### Apply the taint to the node (`node1`):
+### Apply the taint to the node (`node1`):
 
 ```
 kubectl taint nodes node1 app=res-intensive:NoSchedule
@@ -90,33 +95,35 @@ kubectl taint nodes node1 app=res-intensive:NoSchedule
 
 This command applies a taint with the key `app`, value `res-intensive`, and effect `NoSchedule` to node1.
 
-We can also apply taint with a specific effect (Optional):
+**We can also apply taint with a specific effect (Optional)**:
 
 ```
 kubectl taint nodes node1 key=value:PreferNoSchedule
 kubectl taint nodes node1 key=value:NoExecute
 ```
 
-### Applying the Deployments
+## Applying the Deployments
 
 ```
 kubectl apply -f deployment1.yaml
 kubectl apply -f deployment2.yaml
 ```
 
-### Verify the pods 
+## Verify the pods 
 
 ```
 kubectl get pods -o wide
 ```
 This will display more information about each pod, including the `node` each pod is running on
 
-<div style="text-align:center"><img src="./images/Screenshot 2024-05-16 163034.png" width="700"></div>
 
-### Shortcomings in Taints & Toleration
+
+![output-2](https://github.com/Galadon123/images/blob/main/Lab%20-%20Taints%20and%20Tolerations/images/new-2.png?raw=true)
+
+## Shortcomings in Taints & Toleration
 
 Pods that have toleration can be ended up with nodes which is not desired.
 
-<div style="text-align:center"><img src="./images/toleration-demo.png" width="700"></div>
+![Toleration-shortcommings](https://github.com/Galadon123/images/blob/main/Lab%20-%20Taints%20and%20Tolerations/images/toleration-demo.png?raw=true)
 
  
