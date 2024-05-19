@@ -14,7 +14,7 @@
 
 Here is the overview of what we are intended to do in this lab.
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-PVtask/image/overall-steps.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - PersistentVolumeTask/image/overall-steps.png?raw=true" alt="" />
 
 ## 1. Create the PersistentVolume
 
@@ -46,7 +46,7 @@ kubectl create -f logs-pv.yaml
 kubectl get pv
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-PVtask/image/task-createpv.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - PersistentVolumeTask/image/task-createpv.png?raw=true" alt="" />
 
 Here the status `Available` indicates that the object is ready to be claimed.
 
@@ -77,7 +77,7 @@ kubectl create -f logs-pvc.yaml
 kubectl get pvc
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-PVtask/image/task-create-pvc.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - PersistentVolumeTask/image/task-create-pvc.png?raw=true" alt="" />
 
 Once a PersistentVolumeClaim (PVC) is created, if its status is `Bound`, it indicates a successful binding to a PersistentVolume (PV).
 
@@ -115,7 +115,7 @@ kubectl create -f nginx-pod.yaml
 kubectl get pods
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-PVtask/image/task-create-pod.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - PersistentVolumeTask/image/task-create-pod.png?raw=true" alt="" />
 
 ## 4. Exec the pod and create a file
 
@@ -132,4 +132,4 @@ Exit the pod:
 exit
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-PVtask/image/task-exec.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - PersistentVolumeTask/image/task-exec.png?raw=true" alt="" />

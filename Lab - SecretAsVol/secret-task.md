@@ -10,13 +10,13 @@ In this lab, our task is to create a new Secret named `basic-auth` of type kuber
 Mount the Secret as a volume with the path `/etc/secret` and `read-only` permissions to the Pods controlled by the Deployment.
 
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/overview-scrt-vol.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - SecretAsVol/images/overview-scrt-vol.png?raw=true" alt="" />
 
 # Steps
 
 Here is the Overview of our task, mounting secret as a volume.
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/overview2.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - SecretAsVol/images/overview2.png?raw=true" alt="" />
 
 
 ## 1. Create a secret
@@ -59,7 +59,7 @@ data:
 kubectl apply -f secret.yaml
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/secret-yaml.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - SecretAsVol/images/secret-yaml.png?raw=true" alt="" />
 
 ## 2. Create the deployment
 
@@ -97,7 +97,7 @@ spec:
 kubectl apply -f nginx-deploy-secret.yaml
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/nginx-deploy-secret.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - SecretAsVol/images/nginx-deploy-secret.png?raw=true" alt="" />
 
 ## 3. Verify the Deployment and Secret
 
@@ -107,13 +107,13 @@ Now we have to verify the deployment and the secret if they are created properly
 kubectl get all
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/verify-all-created.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - SecretAsVol/images/verify-all-created.png?raw=true" alt="" />
 
 ```bash
 kubectl get secret
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/view-secret.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - SecretAsVol/images/view-secret.png?raw=true" alt="" />
 
 ## 4. View secret details
 
@@ -121,7 +121,7 @@ kubectl get secret
 kubectl get secret basic-auth -o yaml
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/view-secret-wide.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - SecretAsVol/images/view-secret-wide.png?raw=true" alt="" />
 
 ## 5. Verify Mount
 
@@ -141,7 +141,7 @@ cat /etc/secret/username
 cat /etc/secret/password
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secretAsVol/images/verfiy-mount-final.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - SecretAsVol/images/verfiy-mount-final.png?raw=true" alt="" />
 
 So, we have successfully mounted a secret as a volume with the specific path and the given requirements.
 

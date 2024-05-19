@@ -19,7 +19,7 @@ kubectl create secret generic my-db-secret \
 
 This command will create a secret from literal of type `generic`
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/secret-1.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Secret/images/secret-1.png?raw=true" alt="" />
 
 2. Using definition file
 
@@ -47,7 +47,7 @@ Then, run the following command to create the Secret from the definition file:
 kubectl apply -f secret.yaml
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/secret-2.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Secret/images/secret-2.png?raw=true" alt="" />
 
 # Encoding secret
 
@@ -71,7 +71,7 @@ Now we have created secrets. To view the secret we can run
 kubectl get secrets
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/get-secrets.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Secret/images/get-secrets.png?raw=true" alt="" />
 
 
 To view more information about the newly created secret, run
@@ -80,7 +80,7 @@ To view more information about the newly created secret, run
 kubectl describe secrets
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/describe.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Secret/images/describe.png?raw=true" alt="" />
 
 To view the information as well as the value of the secret, run
 
@@ -88,7 +88,7 @@ To view the information as well as the value of the secret, run
 kubectl get secret my-db-secret -o yaml
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-secret/images/value.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Secret/images/value.png?raw=true" alt="" />
 
 Now we can see the hashed values of the secret.
 
