@@ -83,7 +83,7 @@ Once a PersistentVolumeClaim (PVC) is created, if its status is `Bound`, it indi
 
 ## 3. Create the Pod
 
-Next we have to reate the file `nginx-pod.yaml` to define the pod and bind the PersistentVolumeClaim `logs-pvc` to it.
+Next we have to create the file `nginx-pod.yaml` to define the pod and bind the PersistentVolumeClaim `logs-pvc` to it.
 
 ```yaml
 apiVersion: v1
