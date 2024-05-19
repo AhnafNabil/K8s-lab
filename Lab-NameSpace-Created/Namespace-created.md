@@ -1,4 +1,4 @@
-# Kubernetes Namespace
+# Create Namespace in Kubernetes 
 
 Namespaces in Kubernetes provide a mechanism for isolating groups of resources within a single cluster. They are intended for use in environments with many users spread across multiple teams, or projects. Namespaces help to divide cluster resources between multiple users in a way that is logically separated.
 
