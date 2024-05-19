@@ -6,15 +6,15 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 
 ## **Core Concepts**
 
-**Pods**
+### Pods
 - [Create and Execute Commands in a Pod](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Create%20and%20exec%20a%20pod)
 - [Edit a Pod in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Editing%20a%20kubernetes%20pod)
 
-**Replicaset**
+### Replicaset
 - [Create a ReplicaSet in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Creating%20a%20replicaset)
 
 
-**Deployment**
+### Deployment
 
 - [Create a Deployment in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Create%20a%20deployment)
 - [Edit a Deployment in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Editing%20deployment)
@@ -22,7 +22,7 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 - [Rolling Updates and Rollbacks](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Rolling%20Updates%20and%20Rollbacks)
 - Auto Scaling
 
-**Namespace**
+### Namespace
 
 - [Create Namespace in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-NameSpace-Created)
 - [Accessing a Pod from a Different Namespace](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-Namespace-Accessed)
@@ -34,24 +34,24 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 
 ## **Configuration**
 
-**Environment variable**
+### Environment variable
 - [Add Environment Variable in Pod](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Add%20env%20to%20pod)
 
-**ConfigMap**
+### ConfigMap
 - [Create a ConfigMap in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Create%20configmap)
 - [Mount configmap as Environment Variable](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Mount%20configmap%20as%20env)
 - [Mount configmap as Volume](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Mount%20configmap%20as%20volume)
 
-**Secret**
+### Secret
 - [Create a Secret in Kubernetes]()
 - [Mount Secret as Environment Variable]()
 - [Mount Secret as Volume]()
 
-**Node Selector**
+### Node Selector
 - [NodeSelector in  Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-%20Node%20Selector)
 
-**Taints and Tolerance**
-- [Taints and Tolerance in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Taints%20and%20Tolerations)
+### Taints and Toleration
+- [Taints and Toleration in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Taints%20and%20Tolerations)
 
 
 
@@ -60,7 +60,8 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 
 
 ## **Service & Networking**
-**Kubernetes Services**
+
+### Kubernetes Services
 - [Kubernetes Service Using NodePort](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-NodePort)
 - [Kubernetes Service Using ClusterIP](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-ClusterIP)
 - [Kubernetes Service Using LoadBalancer](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-LoadBalancer)
