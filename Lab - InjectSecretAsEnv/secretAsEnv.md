@@ -6,7 +6,7 @@ In Kubernetes, `secrets` are used to store and manage sensitive information, suc
 
 Secrets live out their lives in `etcd`, the central datastore for the entire Kubernetes system. This is the same central location where declarative definitions for Kubernetes Deployments live. This centralized storage approach allows users to create one Secret that can then be consumed by any number of Pods, whether those Pods are identical copies of one another (as would be the case with a Deployment or ReplicaSet) or not.
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-InjectSecretAsENV/image/secretenv.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - InjectSecretAsEnv/image/secretenv.png?raw=true" alt="" />
 
 Mounting a secret as environment variables in a Kubernetes Pod involves creating a `Secret` object in Kubernetes and then referencing that secret in the `Pod's specification`. Kubernetes will then inject the secret's data as environment variables into the container(s) within the Pod.
 
@@ -21,7 +21,7 @@ Environment variables to be included:
 
 This is an overview of what we are going to do
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-InjectSecretAsENV/image/overview2.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - InjectSecretAsEnv/image/overview2.png?raw=true" alt="" />
 
 ### 1. Create a Secret
 
@@ -34,7 +34,7 @@ We can create a secret using kubectl by providing literal key-value pairs.
 kubectl create secret generic my-secret --from-literal=username=my-app-user --from-literal=password=s3cr3t
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-InjectSecretAsENV/image/create-secret1.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - InjectSecretAsEnv/image/create-secret1.png?raw=true" alt="" />
 
 This command creates a secret named `my-secret` with two keys: `username` and `password`.
 
@@ -69,7 +69,7 @@ To create the secret from the yaml file:
 kubectl apply -f secret.yaml
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-InjectSecretAsENV/image/create-secret2.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - InjectSecretAsEnv/image/create-secret2.png?raw=true" alt="" />
 
 ## 2. Define a Pod that Uses the Secret
 
@@ -122,7 +122,7 @@ To verify that the environment variables are correctly injected, we can check th
 kubectl logs my-app-pod
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-InjectSecretAsENV/image/pod-logs.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - InjectSecretAsEnv/image/pod-logs.png?raw=true" alt="" />
 
 Here, we can see the environment variables, including USERNAME and PASSWORD, listed in the output.
 

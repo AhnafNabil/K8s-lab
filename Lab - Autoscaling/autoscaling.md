@@ -13,7 +13,7 @@ Scalability refers to a system's ability to handle increasing load. In Kubernete
 
 The Horizontal Pod Autoscaler automatically scales the number of pods in a deployment, replica set, or stateful set based on observed CPU utilization, memory utilization, or custom metrics. It continuously adjusts the number of replicas to maintain a target utilization level specified in the HPA configuration.
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-autoscale/images/hpa_overview2.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Autoscaling/images/hpa_overview2.png?raw=true" alt="" />
 
 
 ## Steps:
@@ -74,7 +74,7 @@ You can also list all the Horizontal Pod Autoscalers:
 kubectl get hpa
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-autoscale/images/gethpa.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Autoscaling/images/gethpa.png?raw=true" alt="" />
 
 ### 4. Define Resource Requirements
 
@@ -156,7 +156,7 @@ Apply the HPA manifest:
 kubectl apply -f nginx-hpa.yaml
 ```
 
-<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-autoscale/images/gethpa2.png?raw=true" alt="" />
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Autoscaling/images/gethpa2.png?raw=true" alt="" />
 
 
 Now, the HPA reflects the correct resource utilization metrics.
