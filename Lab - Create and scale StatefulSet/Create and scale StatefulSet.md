@@ -4,11 +4,11 @@ A **StatefulSet** is a Kubernetes resource used for managing stateful applicatio
 
 Pods are created, scaled and deleted in a specific, ordered sequence. This ensures that each Pod is created one at a time, waiting for the previous one to be ready before proceeding to the next. This sequential deployment allows for orderly initialization and orchestration of stateful applications.
 
-![alt text](./images/image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20and%20scale%20StatefulSet/images/image.png?raw=true" alt="" />
 
 Each pod has a unique, stable network identity or name and persistent storage that remains consistent across  restarts. This is achieved through a deterministic naming scheme based on the ordinal index of the Pod (e.g., mysql-0, mysql-1).
 
-![alt text](./images/image-1.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20and%20scale%20StatefulSet/images/image-1.png?raw=true" alt="" />
  
 ## Task
 
@@ -71,7 +71,7 @@ kubectl get pods
 
 Expected output:
 
-![alt text](./images/image-2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20and%20scale%20StatefulSet/images/image-2.png?raw=true" alt="" />
 
 ## Scale the StatefulSet
 
@@ -83,7 +83,7 @@ kubectl scale statefulset nginx-statefulset --replicas=5
 
 Expected output:
 
-![alt text](./images/image-3.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20and%20scale%20StatefulSet/images/image-3.png?raw=true" alt="" />
 
 This will do the task.
 
@@ -99,7 +99,7 @@ kubectl get pods
 
 Expected output:
 
-![alt text](./images/image-4.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20and%20scale%20StatefulSet/images/image-4.png?raw=true" alt="" />
 
 
 ## Check the Stable identity of a Pod (Optional)
@@ -119,4 +119,4 @@ kubectl get pods
 
 Expected output:
 
-![alt text](./images/image-5.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Create%20and%20scale%20StatefulSet/images/image-5.png?raw=true" alt="" />
