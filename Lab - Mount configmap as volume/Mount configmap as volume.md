@@ -6,7 +6,7 @@ A ConfigMap in Kubernetes is like a dictionary that stores configuration data, s
 
 Mounting a ConfigMap as a volume allows the configuration data to be exposed as files within a specified directory in the container's filesystem. The key becomes the filename and value becomes the file content. This method is particularly useful when you have multiple configuration files or you want to leverage Kubernetes' ability to manage and update configuration files dynamically.
 
-![alt text](./images/image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Mount%20configmap%20as%20volume/images/image.png?raw=true" alt="" />
 
 ## Task: Create configmap and mount configmap as volume in pod
 Create a ConfigMap named `db-config` in Kubernetes containing environment variables for database running in a pod named `my-db`. The pod uses the `mysql` image. We will then mount our configmap as volume in the pod.
@@ -76,7 +76,7 @@ kubectl create -f pod-definition.yaml
 
   Expected result:
 
-  ![alt text](./images/image-1.png)
+  <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Mount%20configmap%20as%20volume/images/image-1.png?raw=true" alt="" />
 
 
 - We use the following command to see the created pod:
@@ -86,7 +86,7 @@ kubectl create -f pod-definition.yaml
   ```
   Expected result:
 
-  ![alt text](./images/image-2.png)
+  <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Mount%20configmap%20as%20volume/images/image-2.png?raw=true" alt="" />
 
 
 - Now, let's check the environment variables from inside the container:
@@ -104,7 +104,7 @@ kubectl create -f pod-definition.yaml
 
   This will show the environment variables from inside the container:
 
-  ![alt text](./images/image-3.png)
+  <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Mount%20configmap%20as%20volume/images/image-3.png?raw=true" alt="" />
 
   Now if we run the following command from inside the container:
 
@@ -117,4 +117,4 @@ kubectl create -f pod-definition.yaml
 
   Here is the output:
 
-  ![alt text](./images/image-4.png)
+  <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Mount%20configmap%20as%20volume/images/image-4.png?raw=true" alt="" />
