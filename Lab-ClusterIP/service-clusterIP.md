@@ -10,7 +10,7 @@ ClusterIP is the default service type in Kubernetes, and it provides internal co
 
 This guide outlines the steps to create a nginx-deployment service and accessing the service using clusterIP. The final goal is to access the targeted nginx-pod and curl the application using ClusterIP internally within the cluster.
 
-![alt text](./images/Clusterip-nginx.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-ClusterIP/images/Clusterip-nginx.PNG)
 
 ## Prerequisites
 
