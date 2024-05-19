@@ -7,7 +7,7 @@ A ConfigMap in Kubernetes is like a dictionary that stores configuration data, s
 First, we create a ConfigMap in our cluster. We can use a YAML definition file to create it.
 Second, we consume to ConfigMap in our Pods and use its values as environment variables.
 
-![alt text](./images/image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Mount%20configmap%20as%20env/images/image.png?raw=true" alt="" />
 
 ## Task: Create a configMap and add environment variables
 Create a ConfigMap named `db-config` in Kubernetes containing environment variables for database running in a pod named `my-db`. The pod uses the `mysql` image.
@@ -103,7 +103,7 @@ kubectl create -f pod-definition.yaml
 
   Expected result:
 
-  ![alt text](./images/image-3.png)
+  <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Mount%20configmap%20as%20env/images/image-3.png?raw=true" alt="" />
 
 
 - We use the following command to see the created pod:
@@ -113,7 +113,7 @@ kubectl create -f pod-definition.yaml
   ```
   Expected result:
 
-  ![alt text](./images/image-1.png)
+  <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Mount%20configmap%20as%20env/images/image-1.png?raw=true" alt="" />
 
 
 - Now, let's check the environment variables from inside the container:
@@ -131,4 +131,4 @@ kubectl create -f pod-definition.yaml
 
   This will show the environment variables from inside the container:
 
-  ![alt text](./images/image-2.png)
+  <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Mount%20configmap%20as%20env/images/image-2.png?raw=true" alt="" />
