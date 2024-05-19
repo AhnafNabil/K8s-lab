@@ -47,11 +47,13 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 - [Mount Secret as Environment Variable]()
 - [Mount Secret as Volume]()
 
+**Node Selector**
+- [NodeSelector in  Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-%20Node%20Selector)
+
 **Taints and Tolerance**
 - [Taints and Tolerance in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Taints%20and%20Tolerations)
 
-**Node Selector**
-- [NodeSelector in  Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-%20Node%20Selector)
+
 
 
 
