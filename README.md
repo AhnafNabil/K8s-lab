@@ -20,14 +20,12 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 - [Edit a Deployment in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Editing%20deployment)
 - [Scale a Deployment in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Scale%20a%20deployment)
 - [Rolling Updates and Rollbacks](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Rolling%20Updates%20and%20Rollbacks)
-- Auto Scaling
+- [Autoscaling a Deployment in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20Autoscaling)
 
 ### Namespace
 
 - [Create Namespace in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-NameSpace-Created)
 - [Accessing a Pod from a Different Namespace](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-Namespace-Accessed)
-
-
 
 
 
@@ -43,15 +41,15 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 - [Mount configmap as Volume](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Mount%20configmap%20as%20volume)
 
 ### Secret
-- [Create a Secret in Kubernetes]()
-- [Mount Secret as Environment Variable]()
-- [Mount Secret as Volume]()
+- [Create a Secret in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20Secret)
+- [Mount Secret as Environment Variable](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20InjectSecretAsEnv)
+- [Mount Secret as Volume](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20SecretAsVol)
 
 ### Node Selector
 - [NodeSelector in  Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-%20Node%20Selector)
 
-### Taints and Toleration
-- [Taints and Toleration in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Taints%20and%20Tolerations)
+### Taints and Tolerations
+- [Taints and Tolerations in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Taints%20and%20Tolerations)
 
 
 
@@ -68,9 +66,12 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 
 
 ## **State Persistence**
-- Volume - Yasin
-- State persistent volume - Yasin
-- Storage class - Yasin
+
+### Persistent Volumes
+- [Understading Persistent Volumes](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20PersistentVolumes)
+- [Detail setup of storage in Kubernetes using PersistentVolume](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20PersistentVolumeTask)
+
+### StatefulSet
 - [Create and Scale a StatefulSet in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Create%20and%20scale%20StatefulSet)
 
 
