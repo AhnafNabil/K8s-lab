@@ -2,66 +2,73 @@
 
 This guide provides a comprehensive set of hands-on lab exercises designed to help you learn and master Kubernetes. Each module focuses on a specific aspect of Kubernetes. Follow the table of contents to explore the links to all lab modules.
 
+
+
 ## **Core Concepts**
 
 **Pods**
-- [Create and Execute Commands in a Kubernetes Pod]()
-- [Editing a Kubernetes Pod]()
+- [Create and Execute Commands in a Pod](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Create%20and%20exec%20a%20pod)
+- [Edit a Pod in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Editing%20a%20kubernetes%20pod)
 
 **Replicaset**
-- Create replicaset - fazlul
+- [Create a ReplicaSet in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Creating%20a%20replicaset)
+
 
 **Deployment**
 
-- create deployment - minhaz
-- editing deployment - minhaz
-- scale deployment - minhaz
-- rollback and rollout -fazlul
-- auto scaling - yasin
+- [Create a Deployment in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Create%20a%20deployment)
+- [Edit a Deployment in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Editing%20deployment)
+- [Scale a Deployment in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Scale%20a%20deployment)
+- [Rolling Updates and Rollbacks](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Rolling%20Updates%20and%20Rollbacks)
+- Auto Scaling
 
 **Namespace**
 
-- create namespace - Nabil
-- access namespace -Nabil
+- [Create Namespace in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-NameSpace-Created)
+- [Accessing a Pod from a Different Namespace](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-Namespace-Accessed)
+
+
+
+
 
 
 ## **Configuration**
 
 **Environment variable**
-- add env variable with pod - minhaz
+- [Add Environment Variable in Pod](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Add%20env%20to%20pod)
 
 **ConfigMap**
-- Create configmap - minhaz
-- Inject configmap as env - minhaz
-- Inject configmap as volume - minhaz
+- [Create a ConfigMap in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Create%20configmap)
+- [Mount configmap as Environment Variable](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Mount%20configmap%20as%20env)
+- [Mount configmap as Volume](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Mount%20configmap%20as%20volume)
 
 **Secret**
-- Create secret - yasin
-- Inject secret as env - yasin
-- Inject secret as volume - yasin
+- [Create a Secret in Kubernetes]()
+- [Mount Secret as Environment Variable]()
+- [Mount Secret as Volume]()
 
-**Taints and tolerance-fazlul**
-- lab
+**Taints and Tolerance**
+- [Taints and Tolerance in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Taints%20and%20Tolerations)
 
-**Node selector logging -fazlul**
-- lab
+**Node Selector**
+- [NodeSelector in  Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-%20Node%20Selector)
 
-**Node affinity - fazlul**
-- lab
+
 
 
 
 ## **Service & Networking**
-1. Cluster IP - Nabil
-2. Load Balancer - Nabil
-3. Node Port - Nabil
+**Kubernetes Services**
+- [Kubernetes Service Using NodePort](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-NodePort)
+- [Kubernetes Service Using ClusterIP](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-ClusterIP)
+- [Kubernetes Service Using LoadBalancer](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-LoadBalancer)
 
 
 ## **State Persistence**
-1. Volume - Yasin
-2. State persistent volume - Yasin
-3. Storage class - Yasin
-4. StatefulSet - Minhaz
+- Volume - Yasin
+- State persistent volume - Yasin
+- Storage class - Yasin
+- [Create and Scale a StatefulSet in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Create%20and%20scale%20StatefulSet)
 
 
 
