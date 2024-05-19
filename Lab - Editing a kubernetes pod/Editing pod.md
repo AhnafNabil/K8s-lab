@@ -52,7 +52,7 @@ kubectl run my-nginx --image=nginx:1.26 --port=80
     ```
     In the `spec` section we can see the following changes:
 
-    ![alt text](./images/image.png)
+    <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Editing%20a%20kubernetes%20pod/images/image.png?raw=true" alt="" />
 
 4. Delete the existing pod:
 
@@ -77,7 +77,7 @@ kubectl run my-nginx --image=nginx:1.26 --port=80
 
     Expected output:
 
-    ![alt text](./images/image-1.png)
+    <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Editing%20a%20kubernetes%20pod/images/image-1.png?raw=true" alt="" />
 
 - Describe the new pod to verify the changes:
     ```bash
@@ -87,5 +87,5 @@ kubectl run my-nginx --image=nginx:1.26 --port=80
 
     Expected output:
 
-    ![alt text](./images/image-2.png)
+    <img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Editing%20a%20kubernetes%20pod/images/image-2.png?raw=true" alt="" />
 
