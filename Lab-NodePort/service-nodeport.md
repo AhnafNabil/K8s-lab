@@ -6,7 +6,7 @@ In Kubernetes, a NodePort service is a way to expose a Service on each Node's IP
 
 A NodePort service in Kubernetes allocates a port on every Node in the cluster and forwards traffic from that port to the service. This allows external traffic to access the service using the Node's IP and the allocated port.
 
-![alt text](./images/Nodeport-img.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NodePort/images/Nodeport-img.PNG)
 
 ## Task: Accessing Kubernetes Services via NodePort
 
@@ -100,7 +100,7 @@ kubectl get services
 
 We can also get all the information by using ``kubectl get all``
 
-![alt text](./images/nodeport-all.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NodePort/images/nodeport-all.PNG)
 
 If the pods and services are runnung, we are ready for accessing Nginx using NodePort.
 
@@ -112,7 +112,7 @@ To get the IP address of the node in a Kubernetes cluster, we can use the kubect
 kubectl get nodes -o wide
 ```
 
-![alt text](./images/nodeport-ip.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NodePort/images/nodeport-ip.png)
 
 ### 6. Curl using NodePort
 
@@ -124,4 +124,4 @@ curl http://10.62.2.213:30001
 
 ## Expected Output
 
-![alt text](./images/nodeport-output.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NodePort/images/nodeport-output.PNG)
