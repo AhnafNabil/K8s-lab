@@ -2,13 +2,13 @@
 
 Namespaces in Kubernetes provide a mechanism for isolating groups of resources within a single cluster. They are intended for use in environments with many users spread across multiple teams, or projects. Namespaces help to divide cluster resources between multiple users in a way that is logically separated.
 
-![alt text](./images/Namespace-01.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NameSpace-Created/images/Namespace-01.PNG)
 
 In this diagram there a Kubernetes cluster divided into two primary namespaces: ``dev`` and ``prod``. Each namespace serves a distinct purpose, with dev focusing on development and testing, while prod emphasizes stability and security with stricter resource quotas. These two namespaces help isolating resources between dev and prod. 
 
 ## Initial Namespaces
 
-![alt text](./images/Namespace-03.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NameSpace-Created/images/Namespace-03.PNG)
 
 Kubernetes starts with four initial namespaces:
 -   default
@@ -22,7 +22,7 @@ We can see the initial namespaces using the following command:
 kubectl get namespace
 ```
 
-![alt text](./images/Namespace-02.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NameSpace-Created/images/Namespace-02.PNG)
 
 ## Task: Creating a Namespace and Creating a pod definition file in a specific namespace
 
@@ -39,7 +39,7 @@ We can create a new namespace called ``my-namespace`` by using the ``kubectl`` c
 kubectl create namespace my-namespace
 ```
 
-![alt text](./images/Namespace-04.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NameSpace-Created/images/Namespace-04.png)
 
 ## Creating a Namespace Using a YAML File
 
@@ -71,7 +71,7 @@ kubectl create namespace my-namespace
 
     The expected output:
 
-    ![alt text](./images/Namespace-05.png)
+    ![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NameSpace-Created/images/Namespace-05.png)
 
 ## Creating a pod definition file in a specific namespace
 
@@ -102,7 +102,7 @@ kubectl apply -f mypod.yaml --namespace=my-namespace
 
 3. We can see the created pod using ``kubectl describe`` command and find that the pod has been created under the ``my-namespace`` namespace.
 
-![alt text](./images/Namespace-06.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NameSpace-Created/images/Namespace-06.png)
 
 ## Viewing Resources in a Namespace
 
@@ -112,7 +112,7 @@ To view all resources within a specific namespace:
 kubectl get all --namespace=my-namespace
 ```
 
-![alt text](./images/Namespace-07.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NameSpace-Created/images/Namespace-07.PNG)
 
 Here we can see there is one pod created and running in the ``my-namespace`` namespace.
 
@@ -123,7 +123,7 @@ To delete a namespace and all the resources within it:
 ```bash
 kubectl delete namespace my-namespace
 ```
-![alt text](./images/Namespace-08.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-NameSpace-Created/images/Namespace-08.PNG)
 
 There is no namespace called ``my-namespace`` after deletion.
 
