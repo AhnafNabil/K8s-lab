@@ -1,6 +1,8 @@
-# Secrets
+# Understanding Secret
 
-In Kubernetes, a Secret is an object used to store sensitive information such as passwords, OAuth tokens, and SSH keys. They are similar to configMaps, except that they are stored in an encoded or hashed format. Secrets are intended to be used to pass sensitive data to Pods in a secure manner, without exposing it to the Pod configuration or the container image.
+In Kubernetes, a `Secret` is an object used to store sensitive information such as passwords, OAuth tokens, and SSH keys. They are similar to configMaps, except that they are stored in an encoded or hashed format. Secrets are intended to be used to pass sensitive data to Pods in a secure manner, without exposing it to the Pod configuration or the container image.
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab - Secret/images/secret-overview.png?raw=true" alt="" />
 
 # Create Secret
 

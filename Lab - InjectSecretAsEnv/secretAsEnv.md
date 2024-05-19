@@ -1,4 +1,4 @@
-# Injecting a Secret as Environment Variables
+# Injecting Secret as Environment Variables
 
 In Kubernetes, `secrets` are used to store and manage sensitive information, such as passwords, OAuth tokens, and SSH keys. By injecting secrets as environment variables, we can securely provide this sensitive information to out applications running inside Pods.
 
