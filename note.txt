@@ -1,0 +1,8 @@
+[Creating A ReplicaSet](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Creating%20a%20replicaset)
+
+[Rolling Updates and Rollbacks](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Rolling%20Updates%20and%20Rollbacks)
+
+[NodeSelector](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-%20Node%20Selector)
+
+[Taints and Toleration](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Taints%20and%20Tolerations)
+
