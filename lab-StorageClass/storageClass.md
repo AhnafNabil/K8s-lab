@@ -1,8 +1,14 @@
 # Kuberenetes StorageClass
 
-In Kubernetes, a `StorageClass` provides a way to describe the "classes" of storage available for use in a cluster. Different classes might map to quality-of-service levels, backup policies, or other storage attributes. This allows cluster administrators to define different tiers of storage, and developers to request the appropriate class of storage for their applications.
+In Kubernetes, a `StorageClass` provides a way to describe the "classes" of storage available for use in a cluster. Typical characteristics of a storage can be the type (e.g., fast SSD storage versus a remote cloud storage or the backup policy for a storage). The storage class is used to provision a PersistentVolume dynamically based on its criteria.
 
 ![sc](./image/sc.png)
+
+Most Kubernetes cloud providers come with a list of existing provisioners. Minikube already creates a default storage class named `standard` which we can see by the following command
+
+```bash
+kubectl get storageclass
+```
 
 <details>
   <summary>Key Concepts about StorageClass</summary>
@@ -20,147 +26,60 @@ In Kubernetes, a `StorageClass` provides a way to describe the "classes" of stor
 
 ## 1. Create a StorageClass:
 
-Storage classes can be created declaratively only with the help of a YAML manifest. At a minimum, we need to declare the provisioner. All other attributes are optional.
-
-```bash
-vim sc.yaml
-```
+Storage classes can be created declaratively only with the help of a YAML manifest file `sc.yaml`. At a minimum, we need to declare the provisioner. All other attributes are optional.
 
 ```yaml
 apiVersion: storage.k8s.io/v1
 kind: StorageClass
 metadata:
   name: fast
-provisioner: pd.csi.storage.gke.io
+provisioner: kubernetes.io/gce-pd
 parameters:
   type: pd-ssd
-reclaimPolicy: Retain
-volumeBindingMode: Immediate
-```
-
-```bash
-kubectl apply -f sc.yaml
+  replication-type: regional-pd
 ```
 
 Here,
 
 - **`provisioner`**: Specifies the storage provider, in this case, GCE Persistent Disks.
 - **`parameters`**: Defines the type of storage (e.g., SSD).
-- **`reclaimPolicy`**: Indicates that the PV should be retained after the PVC is deleted.
-- **`volumeBindingMode`**: Immediate binding and provisioning when a PVC is created.
 
-## 2. Create a PersistentVolumeClaim (PVC)
+For example we can save the YAML contents in the `sc.yaml` file. Then run the following command to create the storageClass object.
+
+```bash
+kubectl apply -f sc.yaml
+```
+
+We can list the storageClass by the following command:
+
+```bash
+kubectl get storageclass
+```
+
+## 2. Using the Storage Classes
 
 Provisioning a PersistentVolume dynamically requires the assignment of the `storageClass` during the creation of `PeristentVolumeClaim`.
 
-```bash
-vim pvc.yaml
-```
+### Creating a PersistentVolumeClaim to use a storage class
 
 ```yaml
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: my-pvc # Corrected to match the Pod reference
+  name: db-pvc
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: fast # Assignment of the storage class
+      storage: 512Mi
+  storageClassName: standard
 ```
 
 ```bash
 kubectl apply -f pvc.yaml
 ```
 
-- **`storageClassName`**: Specifies that this PVC should use the `fast` StorageClass.
+- **`storageClassName`**: Specifies that this PVC should use the `standard` StorageClass.
 
 A corresponding `PersistentVolume` object will be created only if the storage class can provision an appropriate PersistentVolume through its `provisioner`. It's crucial to note that Kubernetes does not generate an `error or warning message` if this does not happen.
-
-## 3. Mount the PVC to a Pod
-
-The steps for mounting the PersistentVolumeClaim from a Pod are the same as for static and dynamic provisioning.
-
-```bash
-vim pod.yaml
-```
-
-```yaml
-apiVersion: v1
-kind: Pod
-metadata:
-  name: app-pod
-spec:
-  containers:
-    - name: my-app
-      image: alpine
-      command: ["/bin/sh"]
-      args: ["-c", "while true; do sleep 60; done;"]
-      volumeMounts:
-        - mountPath: "/mnt/data"
-          name: my-storage
-  volumes:
-    - name: my-storage
-      persistentVolumeClaim:
-        claimName: my-pvc
-```
-
-```bash
-kubectl apply -f pod.yaml
-```
-
-## Verification
-
-To get the information about the newly created storageClass:
-```bash
-kubectl get sc fast
-```
-![sc](./image/get-sc.png)
-
-Check the PVC status:
-
-```bash
-kubectl get pvc
-```
-![pvc](./image/get-pvc.png)
-
-here we can see the `status` is `pending`. The PVC is waiting for a volume to be created either by the external provisioner `pd.csi.storage.gke.io` or `manually` by the system administrator.
-
-**Solution**
-
-If dynamic provisioning fails, we may need to manually create a PersistentVolume that matches the PVC's requirements.
-
-```bash
-vim pv.yaml
-```
-
-```yaml
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: my-pv
-spec:
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: fast
-  hostPath:
-    path: /mnt/disks/my-disk
-```
-
-```bash
-kubectl apply -f pv.yaml
-```
-
-Lets check the status of the PVC now.
-
-```bash
-kubectl get pvc
-```
-![pvc](./image/get-pvc2.png)
-
-So after creating the PV manually, we can see the `status` is `Bound` and `Used by` the pod `app-pod`.
