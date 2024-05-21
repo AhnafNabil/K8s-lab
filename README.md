@@ -14,4 +14,3 @@
 
 - [Scenario 5 - Labels and Selectors>](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20Scenario%205%20-%20Labels%20and%20Selectors)
 
-

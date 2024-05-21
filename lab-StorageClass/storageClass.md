@@ -9,7 +9,6 @@ Most Kubernetes cloud providers come with a list of existing provisioners. Minik
 ```bash
 kubectl get storageclass
 ```
-
 <details>
   <summary>Key Concepts about StorageClass</summary>
   
@@ -56,6 +55,8 @@ We can list the storageClass by the following command:
 kubectl get storageclass
 ```
 
+![get sc](./image/create-sc.png)
+
 ## 2. Using the Storage Classes
 
 Provisioning a PersistentVolume dynamically requires the assignment of the `storageClass` during the creation of `PeristentVolumeClaim`.
@@ -80,6 +81,8 @@ spec:
 kubectl apply -f pvc.yaml
 ```
 
+![pvc](./image/create-pvc.png)
+
 - **`storageClassName`**: Specifies that this PVC should use the `standard` StorageClass.
 
-A corresponding `PersistentVolume` object will be created only if the storage class can provision an appropriate PersistentVolume through its `provisioner`. It's crucial to note that Kubernetes does not generate an `error or warning message` if this does not happen.
+A corresponding `PersistentVolume` object will be created only if the storage class can provision an appropriate PersistentVolume through its `provisioner`. It's crucial to note that Kubernetes does not generate an `error or warning message` if this does not happen. In the next lab, we will mount a pvc to a pod.
