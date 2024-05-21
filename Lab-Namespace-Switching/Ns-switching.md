@@ -1,0 +1,1 @@
+# Switching Contexts Between Kubernetes Namespaces
