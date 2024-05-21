@@ -11,6 +11,10 @@ Update the image to `nginx:1.22.1` and then revert back to the `first` revision.
 
 ## Solution
 
+Overview of what we are going to do in this lab:
+
+![overview](./image/overview2.png)
+
 To accomplish this task, we have to follow and execute these steps:
 
 ### Step 1: Create the Initial Deployment
@@ -44,6 +48,8 @@ Now we can apply this configuration using `kubectl apply`:
 ```sh
 kubectl apply -f deploy.yaml
 ```
+
+
 
 ### Step 2: Verify the Deployment
 
