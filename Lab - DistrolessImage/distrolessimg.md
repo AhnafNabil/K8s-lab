@@ -2,7 +2,7 @@
 
 ## Introduction
 
-While Docker Debug is a powerful tool, it requires a Docker Desktop Pro license. In this guide, we will explore a couple of alternative tools for debugging distroless containers: *Kubectl Debug* and *Cdebug*.
+While Docker Debug is a powerful tool, it requires a Docker Desktop Pro license. In this guide, we will explore a alternative tools for debugging distroless containers: *Kubectl Debug*
 
 ## Why Distroless Containers Pose a Challenge
 
