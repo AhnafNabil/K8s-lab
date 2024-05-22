@@ -2,7 +2,7 @@
 
 In Kubernetes, a multi-container shared volume is a mechanism that allows multiple containers within a single pod to share the same storage space. This is achieved through Kubernetes volumes, which can be mounted into multiple containers within a pod. 
 
-![alt text](image-3.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Multi%20container%20shared%20volume/images/image-3.png?raw=true" alt="" />
 
 The most commonly used volume type for this purpose is `emptyDir`, which provides a temporary storage space that exists as long as the pod is running.
 
@@ -17,7 +17,7 @@ The most commonly used volume type for this purpose is `emptyDir`, which provide
 
 ## Task
 
-![alt text](./images/image-5.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Multi%20container%20shared%20volume/images/image-5.png?raw=true" alt="" />
 
 **Create a Pod:** Create a pod `my-pod` with `3` containers. Each container will perform a specific task using a shared volume named `log-volume`.  All containers will be using `busybox` iamge.
 
@@ -88,7 +88,7 @@ kubectl create -f pod-def.yaml
 
 Expected output:
 
-![alt text](image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Multi%20container%20shared%20volume/images/image.png?raw=true" alt="" />
 
 ## Verification
 
@@ -102,7 +102,7 @@ kubectl get pods my-pod
 
 Expected output:
 
-![alt text](image-1.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Multi%20container%20shared%20volume/images/image-1.png?raw=true" alt="" />
 
 
 ### View Logs from Each Container
@@ -126,5 +126,5 @@ kubectl logs my-pod -c c3
 
 Expected output:
 
-![alt text](image-2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Multi%20container%20shared%20volume/images/image-2.png?raw=true" alt="" />
 
