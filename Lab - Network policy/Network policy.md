@@ -14,7 +14,7 @@ Here is an example where we have added a policy for a pod in `ns-2`. Ingress tra
 
 ## Task
 
-We will create two namespaces and a pod in each namespace. We will also create a pod in the default namespace. We also need a pod in the default namespace.
+We will create two namespaces and a pod in each namespace. We also need a pod in the default namespace.
 
 ![alt text](./images/image-2.png)
 
@@ -71,7 +71,7 @@ Expected output:
 
 ## Verify Initial Communication
 
-![alt text](./images/image-13.png)
+![alt text](./images/image-18.png)
 
 Run the following commands to verify the initial communication between `demo-app-1` and `demo-app-2`:
 
@@ -91,7 +91,7 @@ We can also try connecting pod `demo-app-0` to `demo-app-2`:
 kubectl exec -it demo-app-0 -- curl 10.42.1.6:80
 ```
 
-We will get the same result here as well. So, the connections works fine.
+We will get the same result here as well. So, the connections works fine from any pod to a pod in `ns-2`.
 
 ## Create Network Policy to Deny All Communication
 
@@ -125,7 +125,7 @@ Expected output:
 
 ## Verify Communication After Policy
 
-![alt text](./images/image-14.png)
+![alt text](./images/image-17.png)
 
 Run the following commands to verify the communication between `demo-app-1` and `demo-app-2` after we set up the network policy:
 
@@ -197,7 +197,7 @@ Expected output:
 ## Verify Communication After Policy
 
 
-![alt text](./images/image-15.png)
+![alt text](./images/image-16.png)
 
 Run the following commands to verify the communication between `demo-app-1` and `demo-app-2` after we set up the network policy:
 
