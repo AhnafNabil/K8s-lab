@@ -95,5 +95,6 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 
 - [NodeAffinity in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-NodeAffinity)
 
-
 - [PodAffinity in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-%20PodAffinity)
+
+- [DaemonSet in kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-DaemonSet%20in%20Kubernetes)
