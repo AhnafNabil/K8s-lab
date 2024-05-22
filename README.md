@@ -20,3 +20,4 @@
 
 - [Troubleshoot-logs](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20Scenario%2019%20-%20Troubleshooting-Logs)
 
+- [Debugging Distroless Containers with Alternative Tools](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20DistrolessImage)
