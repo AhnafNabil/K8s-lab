@@ -1,1 +1,0 @@
-# NodeAffinity and Taint & Toleration
