@@ -6,7 +6,7 @@ Create two pods, first with `name=nginx` and `image=nginx`, second with `name=de
 `image=redis`. Make sure that they end up on the same node without using `nodeName` or
 `nodeselector`.
 
-![task-description](./images/1.png)
+![task-description](https://github.com/Minhaz00/K8s-lab/blob/fazlul/Lab-%20PodAffinity/images/1.png?raw=true)
 
  ## Solution
 
@@ -22,11 +22,11 @@ Create two pods, first with `name=nginx` and `image=nginx`, second with `name=de
 
  - **NodeAffinity**: It's used when we want to influence which nodes our pod should be scheduled on based on node labels.
 
- ![task-description](./images/2.png)
+ ![task-description](https://github.com/Minhaz00/K8s-lab/blob/fazlul/Lab-%20PodAffinity/images/2.png?raw=true)
 
  - **PodAffinity**:  We might want to ensure that related services are scheduled on the same node for better performance or on different nodes for fault tolerance.
 
- ![task-description](./images/3.png)
+ ![task-description](https://github.com/Minhaz00/K8s-lab/blob/fazlul/Lab-%20PodAffinity/images/3.png?raw=true)
 
  ##  Pod Configuration
 
@@ -74,7 +74,7 @@ spec:
 kubectl apply -f nginx-pod.yaml
 kubectl apply -f demo-pod.yaml
 ```
-![output-1](./images/5.png)
+![output-1](https://github.com/Minhaz00/K8s-lab/blob/fazlul/Lab-%20PodAffinity/images/5.png?raw=true)
 
 ## Verify pods are scheduled on the same node
 
@@ -83,6 +83,6 @@ kubectl get pods -o wide
 ```
 Expected Outputs:
 
-![output-2](./images/4.png)
+![output-2](https://github.com/Minhaz00/K8s-lab/blob/fazlul/Lab-%20PodAffinity/images/4.png?raw=true)
 
 
