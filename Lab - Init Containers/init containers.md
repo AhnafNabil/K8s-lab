@@ -9,7 +9,7 @@ Init Containers are specialized containers that run before the main application 
 
 ## Task
 
-![alt text](./images/image-2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Init%20Containers/images/image-2.png?raw=true" alt="" />
 
 - Create a Pod named `my-pod` with an `NGINX` container.
 - Add an init container named `my-init` using the `BusyBox` image.
@@ -68,7 +68,8 @@ We will see the changes in `STATUS`.
 
 Expected output:
 
-![alt text](./images/image-1.png)
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Init%20Containers/images/image-1.png?raw=true" alt="" />
 
 ## Verify the Init Container Execution
 Exec into the running Pod and check if the NGINX container is serving the content created by the init container:
@@ -87,4 +88,5 @@ You should see the output `"hello world"`.
 
 Here is the expected result:
 
-![alt text](./images/image.png)
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Init%20Containers/images/image.png?raw=true" alt="" />
