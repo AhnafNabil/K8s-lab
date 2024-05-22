@@ -9,3 +9,6 @@
 [NodeAffinity](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-NodeAffinity)
 
 [PodAffinity](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-%20PodAffinity)
+
+[DaemonSet in kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-DaemonSet%20in%20Kubernetes)
+
