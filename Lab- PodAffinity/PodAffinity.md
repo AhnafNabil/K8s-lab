@@ -1,4 +1,4 @@
-# Scenario 9 - Scheduling without nodeName and NodeSelector
+# PodAffinity ( Scheduling without nodeName and NodeSelector )
 
 ## Task
 
@@ -71,9 +71,10 @@ spec:
 ## Apply YAML files to create pods
 
 ```
-kubectl apply -f pod1.yaml
-kubectl apply -f pod2.yaml
+kubectl apply -f nginx-pod.yaml
+kubectl apply -f demo-pod.yaml
 ```
+![output-1](./images/5.png)
 
 ## Verify pods are scheduled on the same node
 
@@ -82,6 +83,6 @@ kubectl get pods -o wide
 ```
 Expected Outputs:
 
-//image
+![output-2](./images/4.png)
 
 

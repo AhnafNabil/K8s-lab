@@ -20,13 +20,19 @@ We have a Kubernetes cluster with nodes labeled to indicate their geographic zon
 
 ## Label Nodes
 
-Label Node 1 with `zone=zoneA`:
+#### Get the `nodes` name:
+```
+Kubectl get nodes
+```
+![NodeAffinity](./images/output-1.png)
+
+Label Node-1 with `zone=zoneA`:
 
 ```
 kubectl label nodes <node-1> zone=zoneA
 ```
 
-Label Node 2 with `zone=zoneB`:
+Label Node-2 with `zone=zoneB`:
 
 ```
 kubectl label nodes <node-2> zone=zoneB
@@ -35,13 +41,15 @@ kubectl label nodes <node-2> zone=zoneB
 Replace `<node-1>` and `<node-2>`with the actual names of desired nodes.
 
 
-## Create a Pod Specification with NodeAffinity (`pod1.yaml`)
+## Create a Pod Specification with NodeAffinity
+
+#### Pod Specification with NodeAffinity for zoneA (`zoneA-pod.yaml`)
 
 ```yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  name: mypod
+  name: zone-a-pod
 spec:
   affinity:
     nodeAffinity:
@@ -53,7 +61,29 @@ spec:
             values:
             - zoneA
   containers:
-  - name: mycontainer
+  - name: container-1
+    image: nginx
+```
+
+#### Pod Specification with NodeAffinity for zoneB (`zoneB-pod.yaml`)
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: zone-b-pod
+spec:
+  affinity:
+    nodeAffinity:
+      requiredDuringSchedulingIgnoredDuringExecution:
+        nodeSelectorTerms:
+        - matchExpressions:
+          - key: zone
+            operator: In
+            values:
+            - zoneB
+  containers:
+  - name: container-2
     image: nginx
 ```
 
@@ -62,17 +92,20 @@ spec:
 ## Apply the Pod Specification
 
 ```
-kubectl apply -f pod1.yaml
+kubectl apply -f zoneA-pod.yaml
+kubectl apply -f zoneB-pod.yaml
 ```
+![NodeAffinity](./images/output-2.png)
 
 ## Verify the Pod Placement
 
-After applying the pod specification, verify that the pod has been scheduled on a node labeled with `zone=zoneA`.
+After applying the pod specification, verify that the pod has been scheduled on a node labeled with `zone=zoneA` & `zone=zoneB`.
 
 ```
 kubectl get pods -o wide
 ```
 
-Check the NODE column to ensure that `mypod` is running on a node labeled `zone=zoneA`
+Check the NODE column to ensure that `zoneA-pod` is running on a node labeled `zone=zoneA` and `zoneB-pod` is running on a node labeled `zone=zoneB`
 
-<!-- ![NodeAffinity](./images/3.png) -->
+![NodeAffinity](./images/output-3.png)
+
