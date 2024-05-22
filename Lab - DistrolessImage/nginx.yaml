@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: nginx-pod
+  name: nginx-pod-2
   labels:
     app: nginx
 spec:
@@ -9,6 +9,6 @@ spec:
     runAsNonRoot: true
   containers:
   - name: nginx
-    image: cgr.dev/chaindguard/nginx:latest
+    image: cgr.dev/chainguard/nginx:latest
     ports:
     - containerPort: 8080
