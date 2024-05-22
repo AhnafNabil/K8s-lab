@@ -6,7 +6,7 @@ A Service Account in Kubernetes is an identity used by processes running in a po
 
 When we create a cluster, Kubernetes automatically creates a ServiceAccount object named ``default`` for every namespace in our cluster. The ``default`` service accounts in each namespace get no permissions by default other than the default API discovery permissions that Kubernetes grants to all authenticated principals if role-based access control (RBAC) is enabled. If we delete the ``default`` ServiceAccount object in a namespace, the control plane replaces it with a new one.
 
-<!-- image -->
+![alt text](./images/service-account-04.PNG)
 
 If we deploy a Pod in a namespace, and we don't manually assign a ServiceAccount to the Pod, Kubernetes assigns the ``default`` ServiceAccount for that namespace to the Pod.
 
