@@ -4,19 +4,19 @@ Network policies in Kubernetes control the communication between pods, namespace
 
 By default, all pods in a Kubernetes cluster can communicate with each other. 
 
-![alt text](./images/image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image.png?raw=true" alt="" />
 
 However, with network policies, we can restrict or allow specific types of traffic. A network policy is a set of rules that define how pods communicate with each other and with other network endpoints. We can think of it like a firewall for our Kubernetes pods. When we create a network policy for a pod, it defines what traffic is allowed to come into (ingress) or go out from (egress) the pod. 
 
 Here is an example where we have added a policy for a pod in `ns-2`. Ingress traffic is allowed from the same namespace but not from pods in other namespaces.
 
-![alt text](./images/image-1.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-1.png?raw=true" alt="" />
 
 ## Task
 
 We will create two namespaces and a pod in each namespace. We also need a pod in the default namespace.
 
-![alt text](./images/image-2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-2.png?raw=true" alt="" />
 
 Here is the configuration:
 
@@ -55,7 +55,7 @@ kubectl run demo-app-2 --image=nginx --namespace=ns-2
 
 Expected output:
 
-![alt text](./images/image-3.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-3.png?raw=true" alt="" />
 
 Let's see the pod details in `ns-1` and `ns-2`:
 
@@ -66,12 +66,12 @@ kubectl get pods -owide -n ns-2
 
 Expected output:
 
-![alt text](./images/image-5.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-5.png?raw=true" alt="" />
 
 
 ## Verify Initial Communication
 
-![alt text](./images/image-18.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-18.png?raw=true" alt="" />
 
 Run the following commands to verify the initial communication between `demo-app-1` and `demo-app-2`:
 
@@ -83,7 +83,7 @@ Here, `10.42.1.6` is the IP address of the `demo-app-2` in my case.
 
 Expected output:
 
-![alt text](./images/image-6.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-6.png?raw=true" alt="" />
 
 We can also try connecting pod `demo-app-0` to `demo-app-2`: 
 
@@ -121,11 +121,11 @@ kubectl create -f deny_all_connection.yaml
 
 Expected output:
 
-![alt text](./images/image-7.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-7.png?raw=true" alt="" />
 
 ## Verify Communication After Policy
 
-![alt text](./images/image-17.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-17.png?raw=true" alt="" />
 
 Run the following commands to verify the communication between `demo-app-1` and `demo-app-2` after we set up the network policy:
 
@@ -137,7 +137,7 @@ kubectl exec -it demo-app-1 -n ns-1 -- curl 10.42.1.6:80
 
 Expected output:
 
-![alt text](./images/image-8.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-8.png?raw=true" alt="" />
 
 We are not able to connect as before.
 
@@ -188,7 +188,7 @@ kubectl create -f accept_ns1_connection.yaml
 
 Expected output:
 
-![alt text](./images/image-9.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-9.png?raw=true" alt="" />
 
 
 
@@ -196,8 +196,7 @@ Expected output:
 
 ## Verify Communication After Policy
 
-
-![alt text](./images/image-16.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-16.png?raw=true" alt="" />
 
 Run the following commands to verify the communication between `demo-app-1` and `demo-app-2` after we set up the network policy:
 
@@ -209,7 +208,7 @@ kubectl exec -it demo-app-1 -n ns-1 -- curl 10.42.1.6:80
 
 Expected output:
 
-![alt text](./images/image-11.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-11.png?raw=true" alt="" />
 
 We are able to connect the `demo-app-1` and `demo-app-2` due to the new network policy.
 
@@ -223,6 +222,6 @@ We will get the same result here as well. So, the connections has been denied fo
 
 Here is the output:
 
-![alt text](./images/image-12.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Network%20policy/images/image-12.png?raw=true" alt="" />
 
 So, We can see that, we can not connect to the pod in `ns-2` from `default` namespace but we can connect to the pod in `ns-2` from `ns-1` namespace. That's how network policy works!
