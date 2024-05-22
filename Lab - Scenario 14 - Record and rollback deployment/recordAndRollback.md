@@ -13,7 +13,7 @@ Update the image to `nginx:1.22.1` and then revert back to the `first` revision.
 
 Overview of what we are going to do in this lab:
 
-![overview](./image/overview2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%2014%20-%20Record%20and%20rollback%20deployment/image/overview2.png?raw=true"/>
 
 To accomplish this task, we have to follow and execute these steps:
 
@@ -49,8 +49,6 @@ Now we can apply this configuration using `kubectl apply`:
 kubectl apply -f deploy.yaml
 ```
 
-
-
 ### Step 2: Verify the Deployment
 
 Now we have to ensure that the deployment is created successfully and the pods are running:
@@ -60,7 +58,7 @@ kubectl get deployments
 kubectl get pods
 ```
 
-![create deployment](./image/create-deploy.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%2014%20-%20Record%20and%20rollback%20deployment/image/create-deploy.png?raw=true"/>
 
 ### Step 3: Annotate the Initial Deployment
 
@@ -70,7 +68,7 @@ To record the inital or first history, we can manually add an `annotation` for t
 kubectl annotate deployment demo kubernetes.io/change-cause="Initial deployment"
 ```
 
-![annotate](./image/annotate1.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%2014%20-%20Record%20and%20rollback%20deployment/image/annotate1.png?raw=true"/>
 
 ### Step 4: Update the Deployment Image
 
@@ -94,8 +92,7 @@ We can verify the update by using these commands:
 kubectl get pods -l app=demo -o jsonpath="{.items[*].spec.containers[*].image}"
 ```
 
-![img](./image/verifyupdate.png)
-
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%2014%20-%20Record%20and%20rollback%20deployment/image/verifyupdate.png?raw=true"/>
 
 
 ### Step 6: Check Deployment History
@@ -112,7 +109,7 @@ kubectl rollout history deployment/demo
 
 This will show the revisions and their change causes.
 
-![setmg](./image/setimg.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%2014%20-%20Record%20and%20rollback%20deployment/image/setimg.png?raw=true"/>
 
 ### Step 7: Rollback to the First Revision
 
@@ -131,7 +128,7 @@ kubectl rollout status deployment/demo
 kubectl describe deployment demo
 ```
 
-![rollback](./image/rollback.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%2014%20-%20Record%20and%20rollback%20deployment/image/rollback.png?raw=true"/>
 
 ### Detailed Verification
 
@@ -143,6 +140,6 @@ kubectl get pods -l app=demo -o jsonpath="{.items[*].spec.containers[*].image}"
 
 This should output `nginx`. 
 
-![details-verfication](./image/details-verification.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%2014%20-%20Record%20and%20rollback%20deployment/image/details-verification.png?raw=true"/>
 
 This ensures that we have successfully rollback to the previous version.

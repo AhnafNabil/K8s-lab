@@ -43,6 +43,7 @@ This command retrieves the logs of the `demo` pod and redirects them to a file n
 We can view the file content of `mylog.txt` by:
 
 ![case1](./image/nginx-logs.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%2019%20-%20Troubleshooting-Logs/image/nginx-logs.png?raw=true" />
 
 ```sh
 cat /tmp/mylog.txt
@@ -78,6 +79,6 @@ Now, to save the logs of container `c2` to `/tmp/c2.txt`, we can use the followi
 kubectl logs multi-container-pod -c c2 > /tmp/c2.txt
 ```
 
-![](./image/case2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%2019%20-%20Troubleshooting-Logs/image/case2.png?raw=true"/>
 
 This command retrieves the logs of container `c2` from the pod named `multi-container-pod` and saves them to a file named `c2.txt` located in the `/tmp` directory.

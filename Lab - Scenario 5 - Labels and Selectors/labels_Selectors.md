@@ -23,7 +23,7 @@ Here, we can see we have two worker node available. Now we can label the two nod
 ```bash
 kubectl label nodes your-node-name CKA=true
 ```
-![get nodes](./image/get%20nodes.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%205%20-%20Labels%20and%20Selectors/image/get%20nodes.png?raw=true" />
 
 For the second node
 
@@ -33,7 +33,7 @@ kubectl label nodes your-node-name CKA=false
 
 Now we can check if we have successfully labeled the nodes.
 
-![get nodes 2](./image/get%20nodes%202.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%205%20-%20Labels%20and%20Selectors/image/get%20nodes%202.png?raw=true" />
 
 ### Step 02: Create pod with a nodeSelector?
 
@@ -44,7 +44,8 @@ This YAML file will specify that the pod should only be scheduled on nodes with 
 kubectl run demo --image=nginx --dry-run=client -oyaml > pod.yaml
 ```
 
-![pod yaml](./image/pod%20yaml.png)
+
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%205%20-%20Labels%20and%20Selectors/image/pod%20yaml.png?raw=true" />
 
 Now we can edit the file using and add the NodeSelector. The file should look like this
 
@@ -80,7 +81,7 @@ Then create the second pod as well in the same way.
 kubectl run demo-2 --image=nginx --dry-run=client -o yaml > pod.yaml
 ```
 
-![pod yaml 2](./image/pod%20yaml%202.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%205%20-%20Labels%20and%20Selectors/image/pod%20yaml%202.png?raw=true" />
 
 The yaml file will look like this. Edit the file and add the nodeSelector
 ```bash
@@ -114,6 +115,6 @@ Now to see check the status of pod creation, we can run
 kubectl get pods -o wide
 ```
 
-![](./image/get%20pods%202.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/Lab%20-%20Scenario%205%20-%20Labels%20and%20Selectors/image/get%20pods%202.png?raw=true" />
 
 here, we can see that each pod is running on the its respective node that we labeled.

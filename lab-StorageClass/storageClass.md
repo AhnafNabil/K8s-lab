@@ -2,7 +2,7 @@
 
 In Kubernetes, a `StorageClass` provides a way to describe the "classes" of storage available for use in a cluster. Typical characteristics of a storage can be the type (e.g., fast SSD storage versus a remote cloud storage or the backup policy for a storage). The storage class is used to provision a PersistentVolume dynamically based on its criteria.
 
-![sc](./image/sc.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-StorageClass/image/sc.png?raw=true" />
 
 Most Kubernetes cloud providers come with a list of existing provisioners. Minikube already creates a default storage class named `standard` which we can see by the following command
 
@@ -55,7 +55,7 @@ We can list the storageClass by the following command:
 kubectl get storageclass
 ```
 
-![get sc](./image/create-sc.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-StorageClass/image/create-sc.png?raw=true" />
 
 ## 2. Using the Storage Classes
 
@@ -81,7 +81,7 @@ spec:
 kubectl apply -f pvc.yaml
 ```
 
-![pvc](./image/create-pvc.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/yasin/lab-StorageClass/image/create-pvc.png?raw=true" />
 
 - **`storageClassName`**: Specifies that this PVC should use the `standard` StorageClass.
 
