@@ -2,13 +2,13 @@
 
 ## Introduction
 
-While Docker Debug is a powerful tool, it requires a Docker Desktop Pro license. In this guide, we will explore a couple of alternative tools for debugging distroless containers: *Cytail Debug* and *Cdebug*.
+While Docker Debug is a powerful tool, it requires a Docker Desktop Pro license. In this guide, we will explore a couple of alternative tools for debugging distroless containers: *Kubectl Debug* and *Cdebug*.
 
 ## Why Distroless Containers Pose a Challenge
 
 Distroless containers do not include a shell, which means you cannot simply exec into the container to see what's going on as you would with a Debian or Alpine container. This necessitates additional tooling to facilitate debugging, typically by creating a temporary container that shares the file and process namespaces with the target container.
 
-## Using Cytail Debug
+## Using Kubectl Debug
 
 ### Setting Up
 
@@ -46,11 +46,12 @@ Expected Output:
 
 ![](./image/createpod.png)
 
-### Debugging with Cytail Debug
+### Debugging with kubectl Debug
 
 To debug this pod maybe its thrown an error or displaying the wrong output etc, if its a regular container we can attempt to `exec` into the pod
 
 1. *Attempt to Exec into the Pod:*
+
 ```sh
 kubectl exec -it nginx-pod -- /bin/sh
 ```
@@ -59,7 +60,7 @@ kubectl exec -it nginx-pod -- /bin/sh
 
 This will fail with bin/sh: no such file or directory because the container is distroless. Thats where the kubectl debug comes in.
 
-2. *Run Cytail Debug:*
+2. *Run kubectl Debug:*
 ```sh
 kubectl debug -it --image alpine --target nginx nginx-pod
 ```
@@ -131,7 +132,7 @@ Also make sure the pod is running.
 
 ![](./image/pod2.png)
 
-2. *Run Cytail Debug on the Non-Root Pod:*
+2. *Run kubectl Debug on the Non-Root Pod:*
 ```sh
 kubectl debug -it --image alpine --target nginx nginx-pod-2
 ```    
