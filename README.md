@@ -1,3 +1,5 @@
+# Kubernets Concepts
+
 - [Autoscaling a Deployment](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20Autoscaling)
 
 - [Injecting Secret as Environment Variables](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20InjectSecretAsEnv)
@@ -12,5 +14,9 @@
 
 - [Understanding Storage Class](https://github.com/Minhaz00/K8s-lab/tree/yasin/lab-StorageClass)
 
-- [Scenario 5 - Labels and Selectors>](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20Scenario%205%20-%20Labels%20and%20Selectors)
+- [Labels and Selectors>](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20Scenario%205%20-%20Labels%20and%20Selectors)
+
+- [Record and Rollback](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20Scenario%2014%20-%20Record%20and%20rollback%20deployment)
+
+- [Troubleshoot-logs](https://github.com/Minhaz00/K8s-lab/tree/yasin/Lab%20-%20Scenario%2019%20-%20Troubleshooting-Logs)
 
