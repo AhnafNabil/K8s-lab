@@ -59,7 +59,7 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 - [Kubernetes Service Using NodePort](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-NodePort)
 - [Kubernetes Service Using ClusterIP](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-ClusterIP)
 - [Kubernetes Service Using LoadBalancer](https://github.com/Minhaz00/K8s-lab/tree/nabil-branch/Lab-LoadBalancer)
-- [Network Policy](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Network%20policy) <mark>New Lab</mark>
+
 
 
 ## **State Persistence**
