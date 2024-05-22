@@ -6,3 +6,6 @@
 
 [Taints and Toleration](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab%20-%20Taints%20and%20Tolerations)
 
+[NodeAffinity](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-NodeAffinity)
+
+[PodAffinity](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-%20PodAffinity)
