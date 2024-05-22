@@ -4,7 +4,7 @@
 
 The goal of this lab is to assign a Kubernetes pod with the name ``demo`` and using the ``nginx`` image to a specific node within the cluster.
 
-<!-- image -->
+![alt text](./images/node-05.PNG)
 
 ## Solution
 
