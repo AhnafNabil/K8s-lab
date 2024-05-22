@@ -6,15 +6,13 @@ A Service Account in Kubernetes is an identity used by processes running in a po
 
 When we create a cluster, Kubernetes automatically creates a ServiceAccount object named ``default`` for every namespace in our cluster. The ``default`` service accounts in each namespace get no permissions by default other than the default API discovery permissions that Kubernetes grants to all authenticated principals if role-based access control (RBAC) is enabled. If we delete the ``default`` ServiceAccount object in a namespace, the control plane replaces it with a new one.
 
-![alt text](./images/service-account-04.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Scenario%2024/images/service-account-04.PNG)
 
 If we deploy a Pod in a namespace, and we don't manually assign a ServiceAccount to the Pod, Kubernetes assigns the ``default`` ServiceAccount for that namespace to the Pod.
 
 ## Task
 
 This lab provides a step-by-step guide to deploy a Kubernetes Pod using the ``nginx`` image and a service account named ``demo-sa`` in the ``dev1`` namespace.
-
-<!-- image -->
 
 ## Solution
 
@@ -33,7 +31,7 @@ Check whether the namespace is created using:
 kubectl get namespace
 ```
 
-![alt text](./images/service-account-01.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Scenario%2024/images/service-account-01.png)
 
 ## Create the Service Account ``demo-sa``
 
@@ -49,7 +47,7 @@ See all the service accounts in the ``dev1`` namespace using:
 kubectl get serviceaccounts -n dev1
 ```
 
-![alt text](./images/service-account-02.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Scenario%2024/images/service-account-02.png)
 
 ## Create the Pod using this Service Account
 
@@ -78,7 +76,7 @@ kubectl get pod demo -n dev1 -o yaml | grep serviceAccount
 
 This command retrieves the YAML representation of the ``demo`` pod and filters out lines containing ``serviceAccount``.
 
-![alt text](./images/service-account-03.png)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Scenario%2024/images/service-account-03.png)
 
 ## Cleanup
 
