@@ -40,6 +40,14 @@ kubectl logs pod/demo > /tmp/mylog.txt
 
 This command retrieves the logs of the `demo` pod and redirects them to a file named `mylog.txt` located in the `/tmp` directory.
 
+We can view the file content of `mylog.txt` by:
+
+![case1](./image/nginx-logs.png)
+
+```sh
+cat /tmp/mylog.txt
+```
+
 ### Case 2: Create a multiple container pod with containers named `c1` and `c2` using nginx and redis images respectively, and save the logs of container `c2` to `/tmp/c2.txt` file.
 
 To create a pod with multiple containers and save the logs of container `c2` to `/tmp/c2.txt`, we can use the following bare minimum YAML configuration:
@@ -58,10 +66,10 @@ spec:
   restartPolicy: Never
 ```
 
-Save this configuration to a file named `multi-container-pod.yaml` and apply it using the `kubectl apply` command:
+Save this configuration to a file named for example `pod.yaml` and apply it using the `kubectl apply` command:
 
 ```sh
-kubectl apply -f multi-container-pod.yaml
+kubectl apply -f pod.yaml
 ```
 
 Now, to save the logs of container `c2` to `/tmp/c2.txt`, we can use the following command:
@@ -69,5 +77,7 @@ Now, to save the logs of container `c2` to `/tmp/c2.txt`, we can use the followi
 ```sh
 kubectl logs multi-container-pod -c c2 > /tmp/c2.txt
 ```
+
+![](./image/case2.png)
 
 This command retrieves the logs of container `c2` from the pod named `multi-container-pod` and saves them to a file named `c2.txt` located in the `/tmp` directory.
