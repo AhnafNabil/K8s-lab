@@ -8,7 +8,8 @@ In the dynamic environment of Kubernetes, automation is key to efficiency. CronJ
 ### How CronJobs Work:
 CronJobs are Kubernetes resources designed to run jobs at specified intervals. They function by creating Job resources on a predefined schedule. Each Job created by a CronJob carries out a specific task, following the schedule set by the CronJob definition. The main logic is implemented in the CronJob controller as part of kube-controller-manager. By default, it checks every ten seconds whether it should run a CronJob.
 
-![alt text](image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20Job%20with%20multiple%20pods/images/image-1.png?raw=true" alt="" />
+
 
 ## CronJobs vs Jobs
 

@@ -10,7 +10,8 @@ Each pod does the same tasks independently, and the Job is complete once the spe
 
 Create a Kubernetes Job configuration named `multi-pod-job` to execute a specific command concurrently across `three` pods which contains a container named `busybox` with the `busybox` image. 
 
-![alt text](image-1.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20Job%20with%20multiple%20pods/images/image-1.png?raw=true" alt="" />
+
 
 Ensure that each pod prints the message `Hello, Kubernetes Jobs with multiple pods!`.
 
@@ -68,7 +69,7 @@ kubectl logs <pod-name-3>
 
 Expected output:
 
-![alt text](image.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20Job%20with%20multiple%20pods/images/image.png?raw=true" alt="" />
 
 ## Clean Up
 

@@ -3,7 +3,7 @@
 
 A **Kubernetes Job** is a resource designed to manage the execution of short-lived workloads. Unlike deployments or replica sets that are intended to keep applications running indefinitely, a Job ensures that a specified number of pods successfully complete their tasks.
 
-![alt text](image-5.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Jobs%20in%20kubernetes/images/image-5.png?raw=true" alt="" />
 
 Kubernetes Jobs are designed for specific types of tasks that need to be completed and then finished. These tasks include batch processing, data analytics etc. They are also useful for automating tasks that need to be performed periodically or on a schedule.
 
@@ -15,13 +15,13 @@ The Job monitors these pods to ensure the tasks are completed successfully. If a
 
 Once a pod completes its task successfully, it is not restarted. This is different from deployments, where pods keep running. This approach makes sure tasks are done efficiently without unnecessary restarts. The pods are created one after another.
 
-![alt text](image-1.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Jobs%20in%20kubernetes/images/image-1.png?raw=true" alt="" />
 
 ## Task: Create and Verify a Job
 
 We'll create a Job that runs a single pod to perform a simple task. We'll ensure it completes successfully and check the output.
 
-![alt text](image-4.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Jobs%20in%20kubernetes/images/image-4.png?raw=true" alt="" />
 
 We will create a job named `single-pod-job`. The job runs `one` pod, which contains a container named `busybox` with the `busybox` image. The container executes the command `"echo Hello, Kubernetes Jobs!"`. The job has a restart policy of `Never`.
 
@@ -72,7 +72,7 @@ kubectl logs <pod-name>
 
 Expected otuput:
 
-![alt text](image-2.png)
+<img src="https://github.com/Minhaz00/K8s-lab/blob/Minhaz/Lab%20-%20Jobs%20in%20kubernetes/images/image-2.png?raw=true" alt="" />
 
 The Job named `single-pod-job` was created and has successfully completed its task.
 The pod created by this Job has finished its task and is in a `Completed` state.
