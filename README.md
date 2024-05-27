@@ -100,3 +100,7 @@ This guide provides a comprehensive set of hands-on lab exercises designed to he
 - [DaemonSet in kubernetes](https://github.com/Minhaz00/K8s-lab/tree/fazlul/Lab-DaemonSet%20in%20Kubernetes)
 
 - [Init Container in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Init%20Containers)
+
+- [Jobs in Kubernetes](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Jobs%20in%20kubernetes)
+
+- [Jobs with multiple pods](https://github.com/Minhaz00/K8s-lab/tree/Minhaz/Lab%20-%20Job%20with%20multiple%20pods)
