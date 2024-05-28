@@ -2,7 +2,7 @@
 
 Namespaces in Kubernetes provide a way to divide cluster resources between multiple users. They are intended for use in environments with many users spread across multiple teams or projects. Understanding how to switch between contexts allows us to control and manage our Kubernetes resources effectively.
 
-![alt text](./images/switching-01.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-Namespace-Switching/images/switching-01.PNG)
 
 ## Task: Switching Contexts between ``development`` and ``production`` Namespaces
 
@@ -120,7 +120,7 @@ Now, any ``kubectl`` command will default to the ``development`` namespace:
 kubectl get pods
 ```
 
-![alt text](./images/development-ns.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-Namespace-Switching/images/development-ns.PNG)
 
 Change the default namespace to ``production``:
 
@@ -134,7 +134,7 @@ Now, any ``kubectl`` command will default to the ``production`` namespace:
 kubectl get pods
 ```
 
-![alt text](./images/production-ns.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-Namespace-Switching/images/production-ns.PNG)
 
 ## 5. Confirming the Current Namespace
 
@@ -145,7 +145,7 @@ kubectl config view --minify | grep namespace:
 ```
 This command will show the namespace that is currently set in the active context. If no specific namespace is set, the default namespace will be used.
 
-![alt text](./images/current-context.PNG)
+![alt text](https://raw.githubusercontent.com/Minhaz00/K8s-lab/nabil-branch/Lab-Namespace-Switching/images/current-context.PNG)
 
 By following these steps, we can easily switch between namespaces in Kubernetes, ensuring that our resources and operations are correctly isolated. 
 
